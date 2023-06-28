@@ -1,0 +1,41 @@
+.changes {
+  &__title {
+    margin-left: 96px;
+  }
+
+  &__swiper {
+    &-slide-content {
+      display: flex;
+      gap: 32px;
+      flex-grow: 1;
+    }
+
+    &-img-container {
+      // flex-grow: 1;
+    }
+
+    &-img {
+      object-fit: cover;
+      object-position: center;
+      height: 680px;
+      width: 100%;
+    }
+
+    &-slide-text {
+      min-width: 688px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &-slide-title {
+      @extend %heading-1-font-styles;
+      color: $default-black;
+    }
+
+    &-slide-about {
+      @extend %body-3-font-styles;
+      color: $gray-main;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.hero {
+  position: relative;
+  height: 100vh;
+
+  &__wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+
+  &__content {
+    align-self: center;
+  }
+
+  &__unique {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    gap: 16px;
+    padding: 24px 22px;
+    background-color: $bg-hero-unique;
+    margin-bottom: 80px;
+
+    &-text {
+      @extend %body-4-font-styles;
+      color: $hero-unique-gray;
+    }
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    margin-bottom: 48px;
+  }
+
+  &__subtitle {
+    @extend %heading-2-font-styles;
+    color: $default-black;
+    max-width: fit-content;
+    padding: 4px 16px 12px 12px;
+    margin-bottom: 42px;
+    background-color: rgba($primary-green, 0.10);
+  }
+
+  &__about {
+    @extend %body-5-font-styles;
+    color: $hero-unique-gray;
+    margin-bottom: 48px;
+  }
+
+  &__swiper {
+    height: 100%;
+
+    &-container {
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &-img-container {
+      height: 100%;
+      display: block;
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .swiper-pagination {
+      bottom: 40px !important;
+
+      &-bullet {
+        margin: 0 8px !important;
+        width: 15px;
+        height: 15px;
+        background-color: #AFADB2;
+        opacity: 1;
+  
+        &-active {
+          background-color: $white-main;
+        }
+      }
+    }
+  }
+}

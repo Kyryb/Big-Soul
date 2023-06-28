@@ -1,0 +1,30 @@
+.retreat-about {
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    margin-bottom: 56px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__info {
+    @extend %body-5-font-styles;
+    flex: 1 50%;
+    color: $gray-main;
+  }
+
+  &__img-container {
+    flex: 1 50%;
+  }
+
+  &__img {
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    // aspect-ratio: 3 / 2;
+    height: 454px;
+  }
+}

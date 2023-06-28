@@ -1,0 +1,17 @@
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  &--ua {
+    background-image: url(../../../assets/images/icons/ua.svg);
+    height: 36px;
+    width: 36px;
+  }
+
+  &--coach-ig {
+    background-image: url(../../../assets/images/icons/coach-ig.svg);
+    height: 28px;
+    width: 28px;
+  }
+}

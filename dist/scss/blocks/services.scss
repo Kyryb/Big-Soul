@@ -1,0 +1,88 @@
+.services {
+  &__title {
+    font: 60px/135% $ff-headings;
+    max-width: 50%;
+    color: $black-green;
+    margin-bottom: 48px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px
+  }
+
+  &__card {
+    position: relative;
+    transition: background-color 0.3s ease-in;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: background-color 0.3s ease-in;
+      
+      .services__card {
+        &-blur {
+          opacity: 0;
+          transition: opacity 0.3s ease-in;
+        }
+
+        &-title {
+          margin-bottom: 100px;
+          transition: margin-bottom 0.3s ease-in;
+        }
+      }
+    }
+
+    &-blur {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.00) 50%);
+      transition: all 0.3s ease-in;
+    }
+
+    &-img-container {
+      display: block;
+    }
+
+    &-img {
+      mix-blend-mode: multiply;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-title {
+      box-sizing: content-box;
+      height: 72px;
+      margin: 0px 16px 24px;
+      text-align: center;
+      font: 28px/130% $ff-headings;
+      color: $white-main;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: margin-bottom 0.3s ease-out;
+
+      &--tl {
+        width: min-content;
+      }
+    }
+    
+    &-caption {
+      display: none;
+    }
+  }
+}

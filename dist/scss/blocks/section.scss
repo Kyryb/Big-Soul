@@ -1,0 +1,25 @@
+.section {
+  background-color: $white-main;
+
+  &__title {
+    @extend %body-4-font-styles;
+    width: 688px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    color: $black-green;
+    margin-bottom: 40px;
+
+    &::after {
+      display: inline-block;
+      height: 2px;
+      flex-grow: 1;
+      content: " ";
+      background-color: $primary-green;
+    }
+  }
+
+  &--green {
+    background-color: rgba($primary-green, 5%);
+  }
+}

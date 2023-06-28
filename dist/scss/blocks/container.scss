@@ -1,0 +1,21 @@
+.container {
+  margin: 0 $container-mg;
+  height: 100%;
+
+  @media (max-width: 1599px) {
+    margin: 0 50px;
+  }
+
+  @media (min-width: 1601px){
+    max-width: 1408px;
+    margin: 0 auto;
+  }
+
+  &--left {
+    margin-right: 0px;
+  }
+
+  &--right {
+    margin-left: 0px;
+  }
+}
