@@ -50,3 +50,8 @@ table {
 picture {
 	line-height: 0;
 }
+
+input:-webkit-autofill {
+	-webkit-text-fill-color: $gray-main;
+	-webkit-box-shadow: 0 0 0 50px $white-main inset;
+}

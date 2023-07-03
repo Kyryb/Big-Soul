@@ -1,14 +1,25 @@
 .section {
   background-color: $white-main;
 
+  &__title-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+
+    @include rwd-max(1023) {
+      display: block;
+    }
+  }
+
   &__title {
     @extend %body-4-font-styles;
-    width: 688px;
+    width: 100%;
     display: flex;
     gap: 24px;
     align-items: center;
     color: $black-green;
     margin-bottom: 40px;
+    transition: all 0.3s ease-out;
 
     &::after {
       display: inline-block;
@@ -16,6 +27,21 @@
       flex-grow: 1;
       content: " ";
       background-color: $primary-green;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: all 0.3s ease-in;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    @include rwd-max(767) {
+      margin-bottom: 40px;
     }
   }
 

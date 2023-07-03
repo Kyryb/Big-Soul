@@ -1,0 +1,43 @@
+.custom-nav-button {
+  display: inline-block;
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  border: 1px solid $black-green;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+  @include rwd-max(1279) {
+    height: 64px;
+    width: 64px;
+    transition: all 0.3s ease-in;
+  }
+
+  &--next {
+    background: url(../../../assets/images/custom-slider/arrow-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--prev {
+    background: url(../../../assets/images/custom-slider/arrow-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(180deg);
+  }
+
+  &--disabled {
+    opacity: 0.3;
+  }
+}
+
+.custom-bullet {
+  display: inline-block;
+  flex: 1;
+  height: 4px;
+  background-color: #E9E8ED;
+
+  &--active {
+    background-color: $primary-green;
+  }
+}

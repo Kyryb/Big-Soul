@@ -1,31 +1,28 @@
 .changes {
-  &__title {
-    margin-left: 96px;
-  }
 
   &__swiper {
     &-slide-content {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 32px;
-      flex-grow: 1;
     }
 
     &-img-container {
-      // flex-grow: 1;
+      align-self: center;
     }
 
     &-img {
       object-fit: cover;
       object-position: center;
-      height: 680px;
+      aspect-ratio: 1.14;
       width: 100%;
     }
 
     &-slide-text {
-      min-width: 688px;
       display: flex;
       flex-direction: column;
       gap: 32px;
+      padding-right: $container-mg;
     }
 
     &-slide-title {
@@ -36,6 +33,42 @@
     &-slide-about {
       @extend %body-3-font-styles;
       color: $gray-main;
+    }
+
+    &-nav-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    &-nav {
+      z-index: 2;
+      grid-column: 2 / 3;
+      display: flex;
+      gap: 32px;
+      padding-right: $container-mg;
+      transition: all 0.2 ease-in-out;
+
+      &-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+      }
+
+      &--hidden {
+        opacity: 0;
+      }
+
+      .swiper-pagination {
+        position: static;
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+      }
     }
   }
 }

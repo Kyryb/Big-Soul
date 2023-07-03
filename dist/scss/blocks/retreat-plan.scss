@@ -1,0 +1,404 @@
+.retreat-plan {
+
+  &__swiper {
+    margin: 0 !important;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1023) {
+      transition: all 0.3s ease-in;
+      padding: 0 $container-mg-480 !important;
+    }
+
+    @include rwd-max(479) {
+      padding: 0 $container-mg-375 !important;
+    }
+
+    @include rwd-max(374) {
+      padding: 0 $container-mg-320 !important;
+    }
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    margin-bottom: 48px;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+      transition: all 0.3s ease-in;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+  }
+
+  &__content {
+    margin: 0 $container-mg;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1439) {
+      margin: 0 $container-mg-1024;
+      transition: all 0.3s ease-in;
+    }
+
+    @include rwd-max(1279) {
+      gap: 80px;
+    }
+
+    @include rwd-max(1023) {
+      margin: 0;
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+  }
+  
+  &__cards-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1439) {
+      gap: 24px;
+      transition: all 0.3s ease-in;
+    }
+
+    @include rwd-max(1023) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__cards {
+    position: relative;
+    width: 720px;
+    height: 100%;
+    min-height: 916px;
+    justify-self: center;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1599) {
+      transition: all 0.3s ease-in;
+      width: 620px;
+    }
+
+    @include rwd-max(1439) {
+      width: 580px;
+      min-height: 824px;
+    }
+
+    @include rwd-max(1279) {
+      width: 500px;
+      min-height: 700px;
+    }
+
+    @include rwd-max(1023) {
+      width: 100%;
+      min-height: 870px;
+      padding: 0 $container-mg-480;
+    }
+
+    @include rwd-max(479) {
+      padding: 0 $container-mg-375;
+      min-height: 748px;
+    }
+
+    @include rwd-max(374) {
+      min-height: 700px;
+      padding: 0 $container-mg-320;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px 32px 64px;
+    width: 100%;
+    height: 100%;
+    background-color: $retreat-plan-card-bg;
+
+    
+    @include rwd-max(1023) {
+      left: $container-mg-480;
+      right: $container-mg-480;
+      width: unset;
+    }
+    
+    @include rwd-max(767) {
+      padding: 32px 24px;
+    }
+
+    @include rwd-max(479) {
+      left: $container-mg-375;
+      right: $container-mg-375;
+      padding: 32px 16px 32px 16px;
+    }
+
+    @include rwd-max(374) {
+      left: $container-mg-320;
+      right: $container-mg-320;
+    }
+
+    &--active {
+      position: relative;
+      z-index: 1;
+
+      @include rwd-max(1023) {
+        left: 0;
+        right: 0;
+      }
+
+      .retreat-plan__card-content {
+        opacity: 1;
+      }
+    }
+
+    &--bg {
+      opacity: 1;
+      background-color: $primary-green;
+      transform: rotate(2.687deg);
+      transition: transform 0.3s ease-out;
+
+      @include rwd-max(767) {
+        transition: transform 0.3s ease-in;
+        transform: rotate(2deg);
+      }
+
+      @include rwd-max(374) {
+        transition: transform 0.3s ease-in;
+        transform: rotate(1.5deg);
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &-title {
+      font: 40px/130% $ff-headings;
+      color: $black-green;
+      margin-bottom: 32px;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1599) {
+        transition: all 0.3s ease-in;
+        font-size: 32px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 26px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 40px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 28px;
+        margin-bottom: 24px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 24px;
+      }
+    }
+
+    &-about {
+      @extend %body-5-font-styles;
+      color: $gray-main;
+      margin-bottom: 24px;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        font-size: 18px;
+        transition: all 0.3s ease-in;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(767) {
+        gap: 16px;
+        transition: all 0.3s ease-in;
+      }
+    }
+  
+    &-item {
+      @extend %body-5-font-styles;
+      display: flex;
+      gap: 24px;
+      color: $gray-main;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        font-size: 18px;
+        transition: all 0.3s ease-in;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
+
+      &::before {
+        content: "";
+        background-image: url(../../../assets/images/icons/star-26.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 26px;
+        flex-shrink: 0;
+        transition: all 0.3s ease-out;
+
+        @include rwd-max(1439) {
+          background-image: url(../../../assets/images/icons/star-22.svg);
+          width: 22px;
+          transition: all 0.3s ease-in;
+        }
+      }
+    }
+
+    &-img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 302px;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1599) {
+        transition: all 0.3s ease-in;
+        height: 256px;
+      }
+
+      @include rwd-max(1439) {
+        height: 238px;
+      }
+
+      @include rwd-max(1279) {
+        height: 200px;
+      }
+
+      @include rwd-max(1023) {
+        height: 286px;
+      }
+
+      @include rwd-max(767) {
+        height: 188px;
+      }
+
+      @include rwd-max(479) {
+        height: 152px;
+      }
+
+      @include rwd-max(374) {
+        height: 156px;
+      }
+    }
+
+    &-selector {
+      display: block;
+      width: 100%;
+      font: 28px/150% $ff-main;
+      cursor: pointer;
+      color: $default-black;
+      padding: 32px;
+      border: 1px solid $gray-retreat-plan;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        font-size: 20px;
+        transition: all 0.3s ease-in;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 18px;
+        padding: 24px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 20px;
+        padding: 16px 24px;
+      }
+
+      @include rwd-max(479) {
+        min-width: 304px;
+      }
+
+      @include rwd-max(374) {
+        padding: 16px;
+        font-size: 18px;
+        min-width: unset;
+      }
+
+      &--active {
+        border-color: $primary-green;
+        color: $primary-green;
+      }
+    }
+  }
+}

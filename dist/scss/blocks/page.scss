@@ -4,5 +4,11 @@
 
   &__section {
     margin-bottom: 180px;
+    transition: margin 0.3s ease-out;
+
+    @include rwd-max(1023) {
+      margin-bottom: 80px;
+      transition: margin 0.3s ease-in;
+    }
   }
 }

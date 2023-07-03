@@ -1,4 +1,8 @@
 $container-mg: 96px;
+$container-mg-1024: 54px;
+$container-mg-480: 42px;
+$container-mg-375: 24px;
+$container-mg-320: 16px;
 $white-main: #fff;
 $primary-green: #035940;
 $default-black: #000;
@@ -7,5 +11,13 @@ $hero-unique-gray: #5d5c5f;
 $black-green: #012712;
 $black-secondary: #222224;
 $gray-main: #414043;
+$gray-secondary: #cdccd1;
+$gray-form: #908e94;
+$gray-retreat-plan: #afadb2;
+$retreat-plan-card-bg: #f4f3f6;
+$footer-bg: #383838;
+$footer-icons: #F1E7DA33;
 $ff-main: 'Open Sans', sans-serif;
 $ff-headings: 'Playfair Display', serif;
+
+$gallery-wide-height-ratio: calc(906px / 500px);

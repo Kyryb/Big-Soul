@@ -1,21 +1,22 @@
 .container {
   margin: 0 $container-mg;
   height: 100%;
+  transition: margin 0.3s ease-out;
 
-  @media (max-width: 1599px) {
-    margin: 0 50px;
+  @include rwd-max(1439) {
+    margin: 0 $container-mg-1024;
+    transition: margin 0.3s ease-in;
   }
 
-  @media (min-width: 1601px){
-    max-width: 1408px;
-    margin: 0 auto;
+  @include rwd-max(1023) {
+    margin: 0 $container-mg-480;
   }
 
-  &--left {
-    margin-right: 0px;
+  @include rwd-max(479) {
+    margin: 0 calc($container-mg-375 - 1px) 0 $container-mg-375;
   }
 
-  &--right {
-    margin-left: 0px;
+  @include rwd-max(374) {
+    margin: 0 $container-mg-320;
   }
 }

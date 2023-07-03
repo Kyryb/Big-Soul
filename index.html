@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="page">
   <header class="header" hidden>
     <a href="#" class="logo">
       <img
-        src="../assets/images/logo/Big-soul.svg"
+        src="../assets/images/logo/Big-Soul-Header.svg"
         alt="Big Soul"
-        class="logo"
+        class="logo__img"
       >
     </a>
     <nav class="nav">
@@ -39,7 +39,7 @@
     </nav>
     <a href="" class="btn btn--primary">Забронювати місце</a>
   </header>
-  <section class="hero section page__section" hidden>
+  <section class="hero section page__section">
     <div class="container">
       <div class="hero__wrapper">
         <div class="hero__content">
@@ -61,46 +61,48 @@
           </p>
           <a href="#" class="btn btn--secondary">Переглянути програму</a>
         </div>
-        <div class="hero__swiper-container">
-          <div class="swiper hero__swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide hero__swiper-slide">
-                <picture class="hero__swiper-img-container">
-                  <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
-                </picture>
-              </div>
-              <div class="swiper-slide hero__swiper-slide">
-                <picture class="hero__swiper-img-container">
-                  <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
-                </picture>
-              </div>
-              <div class="swiper-slide hero__swiper-slide">
-                <picture class="hero__swiper-img-container">
-                  <img src="./assets/images/test.jpeg" alt="" class="hero__swiper-img">
-                </picture>
-              </div>
-              <div class="swiper-slide hero__swiper-slide">
-                <picture class="hero__swiper-img-container">
-                  <img src="./assets/images/test2.jpg" alt="" class="hero__swiper-img">
-                </picture>
-              </div>
-              <div class="swiper-slide hero__swiper-slide">
-                <picture class="hero__swiper-img-container">
-                  <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="hero__swiper-container">
+      <div class="swiper hero__swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide hero__swiper-slide">
+            <picture class="hero__swiper-img-container">
+              <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide hero__swiper-slide">
+            <picture class="hero__swiper-img-container">
+              <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide hero__swiper-slide">
+            <picture class="hero__swiper-img-container">
+              <img src="./assets/images/test.jpeg" alt="" class="hero__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide hero__swiper-slide">
+            <picture class="hero__swiper-img-container">
+              <img src="./assets/images/test2.jpg" alt="" class="hero__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide hero__swiper-slide">
+            <picture class="hero__swiper-img-container">
+              <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
+            </picture>
           </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
-  <section class="retreat-about page__section section" hidden>
+  <section class="retreat-about page__section section">
     <div class="container">
-      <span class="section__title">
-        Що таке ретрит?
-      </span>
+      <div class="section__title-container">
+        <span class="section__title">
+          Що таке ретрит?
+        </span>
+      </div>
       <h2 class="retreat-about__title">
         Місце, де ви зможете розслабитися та приділити увагу собі та вашому внутрішньому розвитку, побути собою.
       </h2>
@@ -119,36 +121,38 @@
     </div>
   </section>
 
-  <section class="gallery page__section section section--green" hidden>  
-    <h2 class="gallery__title">
-      Відчуй гармонію разом зі співачкою TAYANNA на віллі в Іспанії
-    </h2>
+  <section class="gallery page__section section section--green">
+    <div class="container">
+      <h2 class="gallery__title">
+        Відчуй гармонію разом зі співачкою TAYANNA на віллі в Іспанії
+      </h2>
+    </div>
     <div class="gallery__content">
-      <div class="gallery__grid-item">
+      <div class="gallery__grid-item gallery__grid-item--1">
         <picture class="gallery__item">
           <img 
-            src="./assets/images/gallery/1.jpg" 
+            src="./assets/images/test.jpeg" 
             alt="" 
             class="gallery__img"
           >
         </picture>
         <picture class="gallery__item">
           <img 
-            src="./assets/images/gallery/2.jpg" 
+            src="./assets/images/test2.jpg" 
             alt="" 
             class="gallery__img"
           >
         </picture>
       </div>
       <span class="gallery__subtitle">TAYANNA & Іспанія</span>
-      <picture class="gallery__item gallery__item--wide">
+      <picture class="gallery__item gallery__item--wide gallery__grid-item--2">
         <img 
           src="./assets/images/gallery/5.jpg" 
           alt="" 
           class="gallery__img gallery__img--wide"
         >
       </picture>
-      <div class="gallery__grid-item">
+      <div class="gallery__grid-item gallery__grid-item--3">
         <picture class="gallery__item">
           <img 
             src="./assets/images/gallery/3.jpg" 
@@ -167,12 +171,12 @@
     </div>
   </section>
 
-  <section class="target page__section section" hidden>
-    <div class="container container--left target__wrap">
+  <section class="target page__section section">
+    <div class="target__wrapper">
+      <span class="section__title target__section-title">
+        Для кого цей ретрит?
+      </span>
       <article class="target__content">
-        <span class="section__title">
-          Для кого цей ретрит?
-        </span>
         <h2 class="target__title">Для особливих жінок!</h2>
         <p class="target__info">
           Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період.
@@ -193,53 +197,117 @@
         </ul>
       </article>
       <picture class="target__img-container">
-        <img src="./assets/images/test.jpeg" alt="" class="target__img">
+        <img src="./assets/images/target.jpg" alt="" class="target__img">
       </picture>
     </div>
   </section>
 
   <section class="changes page__section section">
-    <span class="section__title changes__title">
-      Як ти змінишся?
-    </span>
-    <div class="container container--right">
-      <div class="swiper changes__swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="changes__swiper-slide-content">
-              <picture class="changes__swiper-img-container">
-                <img
-                  src="./assets/images/test.jpeg"
-                  alt=""
-                  class="changes__swiper-img"
-                >
-              </picture>
-              <div class="changes__swiper-slide-text">
-                <h2 class="changes__swiper-slide-title">
-                  Ти полюбиш себе та своє тіло!
-                </h2>
-                <p class="changes__swiper-slide-about">
-                  Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
-                </p>
-              </div>
+    <div class="container">
+      <div class="section__title-container">
+        <span class="section__title changes__title">
+          Як ти змінишся?
+        </span>
+      </div>
+    </div>
+    <div class="swiper changes__swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="changes__swiper-slide-content">
+            <picture class="changes__swiper-img-container">
+              <img
+                src="./assets/images/test.jpeg"
+                alt=""
+                class="changes__swiper-img"
+              >
+            </picture>
+            <div class="changes__swiper-slide-text">
+              <h2 class="changes__swiper-slide-title">
+                Ти полюбиш себе та своє тіло!
+              </h2>
+              <p class="changes__swiper-slide-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
             </div>
           </div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
         </div>
-        <div class="swiper-pagination"></div>
-      
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-slide">
+          <div class="changes__swiper-slide-content">
+            <picture class="changes__swiper-img-container">
+              <img
+                src="./assets/images/test2.jpg"
+                alt=""
+                class="changes__swiper-img"
+              >
+            </picture>
+            <div class="changes__swiper-slide-text">
+              <h2 class="changes__swiper-slide-title">
+                Ти полюбиш себе та своє тіло!
+              </h2>
+              <p class="changes__swiper-slide-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="changes__swiper-slide-content">
+            <picture class="changes__swiper-img-container">
+              <img
+                src="./assets/images/test.jpeg"
+                alt=""
+                class="changes__swiper-img"
+              >
+            </picture>
+            <div class="changes__swiper-slide-text">
+              <h2 class="changes__swiper-slide-title">
+                Ти полюбиш себе та своє тіло!
+              </h2>
+              <p class="changes__swiper-slide-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="changes__swiper-slide-content">
+            <picture class="changes__swiper-img-container">
+              <img
+                src="./assets/images/test.jpeg"
+                alt=""
+                class="changes__swiper-img"
+              >
+            </picture>
+            <div class="changes__swiper-slide-text">
+              <h2 class="changes__swiper-slide-title">
+                Ти полюбиш себе та своє тіло!
+              </h2>
+              <p class="changes__swiper-slide-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="changes__swiper-nav-wrapper">
+        <div class="changes__swiper-nav">
+          <div class="swiper-pagination"></div>
+          <div class="changes__swiper-nav-buttons">
+            <div class="custom-nav-button custom-nav-button--prev"></div>
+            <div class="custom-nav-button custom-nav-button--next" id="test">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="services page__section section" hidden>
+  <section class="services page__section section">
     <div class="container">
-      <span class="section__title">
-        Що включено?
-      </span>
+      <div class="section__title-container">
+        <span class="section__title">
+          Що включено?
+        </span>
+      </div>
       <h2 class="services__title">
         Ви зможете повністю оновитися!
       </h2>
@@ -248,7 +316,7 @@
           <span class="services__card-blur"></span>
           <picture class="services__card-img-container">
             <img 
-              src="./assets/images/services/card-1.jpg" 
+              src="./assets/images/test.jpeg" 
               alt="" 
               class="services__card-img"
             >
@@ -320,11 +388,13 @@
     </div>
   </section>
 
-  <section class="coaches page__section section section--green" hidden>
+  <section class="coaches page__section section section--green">
     <div class="container">
-      <span class="section__title">
-        Тренери на ретриті
-      </span>
+      <div class="section__title-container">
+        <span class="section__title">
+          Тренери на ретриті
+        </span>
+      </div>
       <div class="coaches__text-content">
         <h2 class="coaches__title">
           Ви будете вдосконалюватися разом з професіоналами!
@@ -335,91 +405,600 @@
       </div>
       <div class="coaches__cards">
         <div class="coaches__card">
-          <div class="coaches__card-images">
-            <picture class="coaches__card-img-container">
-              <img
-                src="./assets/images/coaches/card-1-front.jpg"
-                alt=""
-                class="coaches__card-img coaches__card-img--front"
-              >
-            </picture>
-            <picture class="coaches__card-img-container">
-              <img
-                src="./assets/images/coaches/card-1-back.jpg"
-                alt=""
-                class="coaches__card-img coaches__card-img--back"
-              >
-            </picture>
-          </div>
-          <div class="coaches__card-coach-info">
-            <a href="" class="coaches__card-coach-ig-link">
+          <a href="#" class="coaches__card-coach-ig-link">
+            <div class="coaches__card-images">
+              <picture class="coaches__card-img-container">
+                <img
+                  src="./assets/images/coaches/card-1-front.jpg"
+                  alt="TAYANNA"
+                  class="coaches__card-img coaches__card-img--front"
+                >
+              </picture>
+              <picture class="coaches__card-img-container">
+                <img
+                  src="./assets/images/coaches/card-1-back.jpg"
+                  alt="TAYANNA"
+                  class="coaches__card-img coaches__card-img--back"
+                >
+              </picture>
+            </div>
+            <div class="coaches__card-coach-info">
               <i class="icon icon--coach-ig coaches__card-coach-ig-icon"></i>
-            </a>
-            <h3 class="coaches__card-coach-name">TAYANNA</h3>
-          </div>
-          <p class="coaches__card-coach-about">
-            Неймовірна жінка, співчака та мати, якій є чим поділитися з вами.
-            Неймовірна жінка, співчака та мати, якій є чим поділитися з вами.
-            Неймовірна жінка, співчака та мати, якій є чим поділитися з вами.
-          </p>
-        </div>
-        <div class="coaches__card">
-          <div class="coaches__card-images">
-            <picture class="coaches__card-img-container">
-              <img
-                src="./assets/images/coaches/card-1-front.jpg"
-                alt=""
-                class="coaches__card-img coaches__card-img--front"
-              >
-            </picture>
-            <picture class="coaches__card-img-container">
-              <img
-                src="./assets/images/coaches/card-1-back.jpg"
-                alt=""
-                class="coaches__card-img coaches__card-img--back"
-              >
-            </picture>
-          </div>
-          <div class="coaches__card-coach-info">
-            <a href="" class="coaches__card-coach-ig-link">
-              <i class="icon icon--coach-ig coaches__card-coach-ig-icon"></i>
-            </a>
-            <h3 class="coaches__card-coach-name">TAYANNA</h3>
-          </div>
+              <h3 class="coaches__card-coach-name">TAYANNA</h3>
+            </div>
+          </a>
           <p class="coaches__card-coach-about">
             Неймовірна жінка, співчака та мати, якій є чим поділитися з вами.
           </p>
         </div>
         <div class="coaches__card">
-          <div class="coaches__card-images">
-            <picture class="coaches__card-img-container">
-              <img
-                src="./assets/images/coaches/card-1-front.jpg"
-                alt=""
-                class="coaches__card-img coaches__card-img--front"
-              >
-            </picture>
-            <picture class="coaches__card-img-container">
-              <img
-                src="./assets/images/coaches/card-1-back.jpg"
-                alt=""
-                class="coaches__card-img coaches__card-img--back"
-              >
-            </picture>
-          </div>
-          <div class="coaches__card-coach-info">
-            <a href="" class="coaches__card-coach-ig-link">
+          <a href="#" class="coaches__card-coach-ig-link">
+            <div class="coaches__card-images">
+              <picture class="coaches__card-img-container">
+                <img
+                  src="./assets/images/coaches/card-2-front.jpg"
+                  alt="Ірина Стойко"
+                  class="coaches__card-img coaches__card-img--front"
+                >
+              </picture>
+              <picture class="coaches__card-img-container">
+                <img
+                  src="./assets/images/coaches/card-2-back.jpg"
+                  alt="Ірина Стойко"
+                  class="coaches__card-img coaches__card-img--back"
+                >
+              </picture>
+            </div>
+            <div class="coaches__card-coach-info">
               <i class="icon icon--coach-ig coaches__card-coach-ig-icon"></i>
-            </a>
-            <h3 class="coaches__card-coach-name">TAYANNA</h3>
-          </div>
+              <h3 class="coaches__card-coach-name">Ірина Стойко</h3>
+            </div>
+          </a>
           <p class="coaches__card-coach-about">
-            Неймовірна жінка, співчака та мати, якій є чим поділитися з вами.
+            Оганізатор подорожей та ретритів, власниця туристичної агенції, практикуючий психолог - гіпнотерапевт.
+          </p>
+        </div>
+        <div class="coaches__card">
+          <a href="#" class="coaches__card-coach-ig-link">
+            <div class="coaches__card-images">
+              <picture class="coaches__card-img-container">
+                <img
+                  src="./assets/images/coaches/card-3-front.jpg"
+                  alt="Мар'яна Завада"
+                  class="coaches__card-img coaches__card-img--front"
+                >
+                <img
+                  src="./assets/images/coaches/card-3-back.jpg"
+                  alt="Мар'яна Завада"
+                  class="coaches__card-img coaches__card-img--back"
+                >
+              </picture>
+            </div>
+            <div class="coaches__card-coach-info">
+              <i class="icon icon--coach-ig coaches__card-coach-ig-icon"></i>
+              <h3 class="coaches__card-coach-name">Марʼяна Завада</h3>
+            </div>
+          </a>
+          <p class="coaches__card-coach-about">
+            Регресолог, гіпнотерапевт, НЛП практик, коуч з жіночої реалізації, допомагає жінкам знайти себе та насолоджуватися життям.
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="contact-us section page__section">
+    <div class="container">
+      <picture class="contact-us__background-container">
+        <img 
+          src="./assets/images/contact-us.jpg" 
+          alt="" 
+          class="contact-us__background-img"
+        >
+      </picture>
+      <h2 class="contact-us__title">TAYANNA & Іспанія</h2>
+      <form class="contact-us__form" action="#">
+        <h2 class="contact-us__form-title">Звʼяжися з нами</h2>
+        <p class="contact-us__form-short-info">
+          Наш менеджер зателефонує вам та розвіє всі ваші острахи
+        </p>
+        <div class="contact-us__form-elements">
+          <div class="contact-us__form-field">
+            <label for="name" class="contact-us__form-label">
+              Ваше імʼя
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="contact-us__form-input"
+              placeholder="Юлія"
+            >
+          </div>
+          <div class="contact-us__form-field">
+            <label for="tel-num" class="contact-us__form-label">
+              Номер телефону
+            </label>
+            <input
+              type="tel"
+              name="tel-number"
+              class="contact-us__form-input"
+              placeholder="+380"
+              id="tel-num"
+            >
+          </div>
+          <a class="btn btn--primary">
+            Зв'язатися  
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="retreat-plan section page__section">
+    <div class="container">
+      <div class="section__title-container">
+        <span class="section__title">Програма ретриту</span>
+      </div>
+      <h2 class="retreat-plan__title">
+        Що ж тебе чекає?
+      </h2>
+    </div>
+    <div class="retreat-plan__content">
+      <div class="retreat-plan__swiper swiper">
+        <div class="retreat-plan__cards-controls swiper-wrapper">
+          <div class="swiper-slide">
+            <span class="retreat-plan__card-selector retreat-plan__card-selector--active">
+              День другий l Увага собі.
+            </span>
+          </div>
+          <div class="swiper-slide">
+            <span class="retreat-plan__card-selector">
+              День другий l Увага собі.
+            </span>
+          </div>
+          <div class="swiper-slide">
+            <span class="retreat-plan__card-selector">
+              День другий l Увага собі.
+            </span>
+          </div>
+          <div class="swiper-slide">
+            <span class="retreat-plan__card-selector">
+              День другий l Увага собі.
+            </span>
+          </div>
+          <div class="swiper-slide">
+            <span class="retreat-plan__card-selector">
+              День другий l Увага собі.
+            </span>
+          </div>
+          <div class="swiper-slide">
+            <span class="retreat-plan__card-selector">
+              День другий l Увага собі.
+            </span>
+          </div>
+          <div class="swiper-slide">
+            <span class="retreat-plan__card-selector">
+              День другий l Увага собі.
+            </span>
+          </div>
+      </div>
+      </div>
+
+      <div class="retreat-plan__cards">
+        <div class="retreat-plan__card retreat-plan__card--active">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/retreat-plan/card-1.jpg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/retreat-plan/card-2.jpg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/retreat-plan/card-4.jpg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/retreat-plan/card-5.jpg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/retreat-plan/card-6.jpg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/test.jpeg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/test2.jpg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card retreat-plan__card--bg"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews section page__section">
+    <div class="container">
+      <div class="section__title-container">
+        <span class="section__title">
+            Відгуки
+        </span>
+      </div>
+      <h2 class="reviews__title">
+        Нам довіряють
+      </h2>
+    </div>
+
+    <div class="reviews__swiper-wrapper">
+      <div class="swiper reviews__swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture class="reviews__swiper-img-container">
+              <source 
+                srcset = './assets/images/reviews/story.jpg'
+                media = '(max-width: 767px)'
+              />
+              <img
+                src="./assets/images/reviews/1.jpg"
+                alt=""
+                class="reviews__swiper-img"
+              >
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="reviews__swiper-img-container">
+              <source 
+                srcset = './assets/images/reviews/story.jpg'
+                media = '(max-width: 767px)'
+              />
+              <img
+                src="./assets/images/reviews/2.jpg"
+                alt=""
+                class="reviews__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="reviews__swiper-img-container">
+              <source 
+                srcset = './assets/images/reviews/story.jpg'
+                media = '(max-width: 767px)'
+              />
+              <img
+                src="./assets/images/reviews/3.jpg"
+                alt=""
+                class="reviews__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="reviews__swiper-img-container">
+              <source 
+                srcset = './assets/images/reviews/story.jpg'
+                media = '(max-width: 767px)'
+              />
+              <img
+                src="./assets/images/reviews/3.jpg"
+                alt=""
+                class="reviews__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="reviews__swiper-img-container">
+              <source 
+                srcset = './assets/images/reviews/story.jpg'
+                media = '(max-width: 767px)'
+              />
+              <img
+                src="./assets/images/test.jpeg"
+                alt=""
+                class="reviews__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="reviews__swiper-img-container">
+              <source 
+                srcset = './assets/images/reviews/story.jpg'
+                media = '(max-width: 767px)'
+              />
+              <img
+                src="./assets/images/test.jpeg"
+                alt=""
+                class="reviews__swiper-img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="reviews__swiper-img-container">
+              <source 
+                srcset = './assets/images/reviews/story.jpg'
+                media = '(max-width: 767px)'
+              />
+              <img
+                src="./assets/images/reviews/1.jpg"
+                alt=""
+                class="reviews__swiper-img">
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="reviews__swiper-buttons">
+        <div class="custom-nav-button custom-nav-button--prev"></div>
+        <div class="custom-nav-button custom-nav-button--next">
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us section page__section">
+    <div class="container">
+      <picture class="contact-us__background-container">
+        <img 
+          src="./assets/images/contact-us.jpg" 
+          alt="" 
+          class="contact-us__background-img"
+        >
+      </picture>
+      <h2 class="contact-us__title">TAYANNA & Іспанія</h2>
+      <form class="contact-us__form" action="#">
+        <h2 class="contact-us__form-title">Звʼяжися з нами</h2>
+        <p class="contact-us__form-short-info">
+          Наш менеджер зателефонує вам та розвіє всі ваші острахи
+        </p>
+        <div class="contact-us__form-elements">
+          <div class="contact-us__form-field">
+            <label for="name" class="contact-us__form-label">
+              Ваше імʼя
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="contact-us__form-input"
+              placeholder="Юлія"
+            >
+          </div>
+          <div class="contact-us__form-field">
+            <label for="tel-num" class="contact-us__form-label">Ваше імʼя</label>
+            <input
+              type="tel"
+              name="tel-number"
+              class="contact-us__form-input"
+              placeholder="+380"
+              id="tel-num"
+            >
+          </div>
+          <a class="btn btn--primary">
+            Зв'язатися  
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__content">
+          <div class="footer__icons">
+            <a href="#" class="logo">
+              <img 
+                src="./assets/images/logo/Big-Sould-Footer.svg" 
+                alt="Big Soul Logo" 
+                class="logo__img"
+              >
+            </a>
+            <div class="footer__social">
+              <a href="" class="footer__social-link">
+                <i class="icon icon--footer icon--ig"></i>
+              </a>
+              <a href="" class="footer__social-link">
+                <i class="icon icon--footer icon--tg"></i>
+              </a>
+              <a href="" class="footer__social-link">
+                <i class="icon icon--footer icon--mail"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer__mailing">
+            <h4 class="footer__mail-form-title">
+              Отримуй інформацію про наступні ретрити
+            </h4>
+            <form action="#" class="footer__mail-form">
+                <input
+                  type="email"
+                  name="name"
+                  id="name"
+                  class="footer__mail-form-input"
+                  placeholder="Email"
+                >
+                <a class="btn btn--footer">
+                  Відправити
+                </a>
+            </form>
+          </div>
+          <div class="footer__contact-us">
+            <h3 class="footer__contact-us-title">Contact</h3>
+            <a 
+              href="mailto:alma.lawson@example.com" class="footer__contact-us-link">
+              alma.lawson@example.com
+            </a>
+            <a 
+              href="#" class="footer__contact-us-link">
+              8502 Preston Rd. Inglewood, Maine 98380
+            </a>
+            <a 
+              href="Tel:808-555-0111" class="footer__contact-us-link">
+              WhatsApp: (808) 555-0111
+            </a>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <span class="footer__copyright-item">2023</span>
+          <span class="footer__copyright-item">© Big soul</span>
+        </div>
+      </div>
+    </div>
+  </footer>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

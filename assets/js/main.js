@@ -11,6 +11,13 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
 /* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.min.css");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 
 
 console.log("Hello world");
@@ -24,15 +31,156 @@ var heroSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.her
     clickable: true
   },
   speed: 300,
+  spaceBetween: 0,
   keyboard: true,
   loop: true,
   longSwipes: false,
-  followFinger: false,
+  // followFinger: false,
   effect: 'slide',
   preventInteractionOnTransition: true
 });
-var changesSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.changes__swiper', {});
-console.log(heroSwiper);
+var changesSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.changes__swiper', {
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
+  pagination: {
+    type: 'bullets',
+    el: '.swiper-pagination',
+    bulletClass: 'custom-bullet',
+    bulletActiveClass: 'custom-bullet--active',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.custom-nav-button--next',
+    prevEl: '.custom-nav-button--prev',
+    disabledClass: 'custom-nav-button--disabled',
+    hiddenClass: 'cuton-nav-shit'
+  },
+  speed: 500,
+  keyboard: true,
+  longSwipes: false
+});
+changesSwiper.on('transitionStart', function () {
+  var changesNav = document.querySelector('.changes__swiper-nav');
+  changesNav.classList.add('changes__swiper-nav--hidden');
+});
+changesSwiper.on('transitionEnd', function () {
+  var changesNav = document.querySelector('.changes__swiper-nav');
+  changesNav.classList.remove('changes__swiper-nav--hidden');
+});
+changesSwiper.on('touchMove', function () {
+  var changesNav = document.querySelector('.changes__swiper-nav');
+  changesNav.classList.add('changes__swiper-nav--hidden');
+});
+changesSwiper.on('touchEnd', function () {
+  var changesNav = document.querySelector('.changes__swiper-nav');
+  changesNav.classList.remove('changes__swiper-nav--hidden');
+});
+var reviews = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__swiper', {
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: '.custom-nav-button--next',
+    prevEl: '.custom-nav-button--prev',
+    disabledClass: 'custom-nav-button--disabled',
+    hiddenClass: 'cuton-nav-shit'
+  },
+  speed: 500,
+  keyboard: true,
+  longSwipes: true,
+  slidesPerView: 1,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 16
+    },
+    375: {
+      slidesPerView: 1,
+      spaceBetween: 24
+    },
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 42
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 24
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 24
+    },
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 32
+    }
+  }
+});
+var breakpoint = window.matchMedia('(min-width:1024px)');
+var retreatPlanSwiper;
+var breakpointChecker = function breakpointChecker() {
+  if (breakpoint.matches === true) {
+    if (retreatPlanSwiper !== undefined) {
+      retreatPlanSwiper.destroy(true, true);
+    }
+    ;
+    return;
+  } else if (breakpoint.matches === false) {
+    return enableSwiper();
+  }
+};
+var enableSwiper = function enableSwiper() {
+  retreatPlanSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.retreat-plan__swiper', {
+    keyboard: true,
+    // longSwipes: true,
+    slidesPerView: 1.1,
+    spaceBetween: 16,
+    direction: 'horizontal',
+    speed: 300,
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      }
+    }
+  });
+};
+breakpoint.addListener(breakpointChecker);
+breakpointChecker();
+var cardSelectors = document.getElementsByClassName("retreat-plan__card-selector");
+var _iterator = _createForOfIteratorHelper(cardSelectors),
+  _step;
+try {
+  var _loop = function _loop() {
+    var cardSelector = _step.value;
+    cardSelector.addEventListener("click", function () {
+      var selectorArray = _toConsumableArray(cardSelectors);
+      var cardsArray = _toConsumableArray(document.getElementsByClassName("retreat-plan__card"));
+      var selectorIndex = selectorArray.indexOf(cardSelector);
+      if (selectorIndex > cardsArray.length - 1) {
+        return;
+      }
+      selectorArray.forEach(function (element) {
+        if (element.classList.contains('retreat-plan__card-selector--active')) {
+          var elementIndex = selectorArray.indexOf(element);
+          element.classList.remove('retreat-plan__card-selector--active');
+          cardsArray.at(elementIndex).classList.remove('retreat-plan__card--active');
+        }
+      });
+      cardSelector.classList.add('retreat-plan__card-selector--active');
+      cardsArray.at(selectorIndex).classList.add('retreat-plan__card--active');
+    });
+  };
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    _loop();
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
 
 /***/ }),
 

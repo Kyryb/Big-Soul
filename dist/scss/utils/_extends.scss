@@ -17,3 +17,12 @@
 %heading-2-font-styles {
   font: 32px/130% $ff-headings;
 }
+
+%heading-4-font-styles {
+  font: 24px/130% $ff-headings;
+}
+
+%italic-heading {
+  font: 400 italic 90px/118% $ff-headings;
+  letter-spacing: 0.9;
+}

@@ -1,0 +1,215 @@
+.footer {
+  padding: 56px 0;
+  background-color: $footer-bg;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 98px;
+    transition: gap 0.3s ease-out;
+
+    @include rwd-max(1023) {
+      transition: gap 0.3s ease-in;
+      gap: 80px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1023) {
+      transition: all 0.3s ease-in;
+      flex-direction: column;
+      justify-content: unset;
+      align-items: center;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1023) {
+      transition: all 0.3s ease-in;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 38px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 24px;
+
+    &-link {
+      line-height: 0;
+    }
+  }
+
+  &__mailing {
+    transition: margin 0.3s ease-out;
+
+    @include rwd-max(1023) {
+      transition: margin 0.3s ease-in;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__mail-form {
+    display: flex;
+    gap: 32px;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1279) {
+      transition: all 0.3s ease-in;
+      gap: 16px;
+    }
+
+    @include rwd-max(767) {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
+
+    &-title {
+      @extend %heading-4-font-styles;
+      color: $white-main;
+      margin-bottom: 24px;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        transition: all 0.3s ease-in;
+        font-size: 20px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 24px;
+        margin-bottom: 36px;
+        text-align: center;
+      }
+
+      @include rwd-max(479) {
+        font-size: 20px;
+        width: 70%;
+        margin: 0 auto 36px auto;
+      }
+
+      @include rwd-max(374) {
+        width: 80%;
+      }
+    }
+
+    &-input {
+      width: 448px;
+      padding: 14px 28px;
+      border: 1px solid $white-main;
+      background-color: $footer-bg;
+      color: $white-main;
+      font: 18px $ff-main;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        transition: all 0.3s ease-in;
+        width: 364px;
+      }
+
+      @include rwd-max(1279) {
+        transition: all 0.3s ease-in;
+        width: 300px;
+      }
+
+      @include rwd-max(1023) {
+        width: 364px;
+      }
+
+      @include rwd-max(767) {
+        width: 100%;
+      }
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: $white-main;
+        caret-color: $white-main;
+        -webkit-box-shadow: 0 0 0 50px $footer-bg inset;
+      }
+
+      &::placeholder {
+        font: 18px $ff-main;
+        color: $gray-secondary;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__contact-us {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &-title {
+      font: 700 20px $ff-headings;
+      text-transform: uppercase;
+      color: $white-main;
+      transition: font-size 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        transition: font-size 0.3s ease-in;
+        font-size: 18px;
+      }
+      
+      @include rwd-max(1279) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    &-link {
+      font: 16px $ff-main;
+      color: $white-main;
+      text-decoration: none;
+      transition: font-size 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        transition: font-size 0.3s ease-in;
+        font-size: 14px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 12px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 16px;
+        text-align: center;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      font: 300 16px/100% $ff-main;
+      color: $white-main;
+    }
+  }
+}

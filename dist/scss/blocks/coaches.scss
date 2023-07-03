@@ -1,22 +1,101 @@
 .coaches {
   padding: 80px 0;
+  transition: all 0.3s ease-out;
+
+  @include rwd-max(767) {
+    padding: 40px 0;
+    transition: all 0.3s ease-in;
+  }
 
   &__text-content {
     display: flex;
     gap: 35px;
     margin-bottom: 48px;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1279) {
+      transition: all 0.3s ease-in;
+      margin-bottom: 36px;
+    }
+
+    @include rwd-max(1023) {
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
   }
 
   &__title {
+    @extend %heading-1-font-styles;
     flex: 1 60%;
-    font: 60px/135% $ff-headings;
     color: $black-green;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+      transition: all 0.3s ease-in;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
   }
 
   &__about {
+    @extend %body-5-font-styles;
     flex: 1 40%;
-    font: 20px/150% $ff-main;
     color: $gray-main;
+
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1599) {
+      font-size: 17px;
+      transition: all 0.3s ease-in;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 13px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 20px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 18px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 14px;
+    }
   }
 
   &__cards {
@@ -24,6 +103,18 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 32px;
     place-items: start;
+    transition: all 0.3s ease-out;
+
+    @include rwd-max(1023) {
+      column-gap: 0;
+      row-gap: 32px;
+      grid-template-columns: 1fr 4fr 1fr;
+      transition: all 0.3s ease-in;
+    }
+
+    @include rwd-max(767) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__card {
@@ -31,17 +122,21 @@
     flex-direction: column;
     gap: 16px;
 
+    @include rwd-max(1023) {
+      grid-column: 2;
+    }
+
     &:hover {
       .coaches__card {
         &-coach-ig-icon {
           transition: all 0.3s ease-in;
-          height: 30px;
-          width: 30px;
+          transform: scale(1.1);
         }
 
         &-coach-name {
           transition: text-decoration 0.3s ease-in;
           text-decoration: underline;
+          text-underline-position: under;
         }
       }
       .coaches__card-img--back {
@@ -56,6 +151,7 @@
 
     &-images {
       position: relative;
+      margin-bottom: 16px;
     }
 
     &-img-container {
@@ -63,11 +159,32 @@
     }
 
     &-img {
+      @include getGridImgHeight(32px, 3, $container-mg, 505px, 448px);
       object-position: center;
       object-fit: cover;
-      height: 504px;
       width: 100%;
-      transition: opacity 0.3s ease-out;
+      transition: all 0.3s ease-out;
+
+      @include rwd-max(1439) {
+        transition: all 0.3s ease-in;
+        @include getGridImgHeight(32px, 3, $container-mg-1024, 505px, 448px);
+      }
+
+      @include rwd-max(1023) {
+        @include getGridImgHeight(0px, 1.5, $container-mg-480, 349px, 328px);
+      }
+
+      @include rwd-max(767) {
+        @include getGridImgHeight(0px, 1, $container-mg-480, 349px, 328px);
+      }
+
+      @include rwd-max(479) {
+        @include getGridImgHeight(0px, 1, $container-mg-375, 349px, 328px);
+      }
+
+      @include rwd-max(374) {
+        @include getGridImgHeight(0px, 1, $container-mg-320, 349px, 328px);
+      }
 
       &--front {
         opacity: 1;
@@ -88,9 +205,34 @@
     }
 
     &-coach-name {
-      transition: text-decoration 0.3s ease-out;
+      transition: all 0.3s ease-out;
       font: 28px/130% $ff-headings;
       color: $black-green;
+
+      @include rwd-max(1599) {
+        font-size: 26px;
+        transition: font-size 0.3s ease-out;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 24px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 32px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 24px;
+      }
     }
 
     &-coach-ig-icon {
@@ -98,9 +240,42 @@
     }
 
     &-coach-about {
-      font: 20px/150% $ff-main;
+      @extend %body-5-font-styles;
       color: $gray-main;
+      transition: font-size 0.3s ease-in;
+
+      @include rwd-max(1599) {
+        font-size: 18px;
+        transition: font-size 0.3s ease-out;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
     }
 
+    &-coach-ig-link {
+      text-decoration: none;
+    }
   }
 }

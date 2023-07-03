@@ -1,0 +1,27 @@
+@mixin rwd-range($px, $px2) {
+  $max-width: #{$px}px;
+  $min-width: #{$px2}px;
+  @media screen and (max-width: $max-width) and (min-width: $min-width) {
+    @content;
+  }
+}
+
+
+@mixin rwd-max($px) {
+  $min-width: #{$px}px;
+  @media screen and (max-width: $min-width) {@content}
+}
+
+@mixin getGridImgHeight($grid-gap, $columnsNum, $container-margin, $aspect-height, $aspect-width) {
+  height: calc((100vw - (2 * $container-margin) - $grid-gap * 
+    ($columnsNum - 1)) / $columnsNum * ($aspect-height / $aspect-width));
+}
+
+@function getGalleryHeight($width) {
+  @return calc((380px / 280px) * $width)
+}
+
+@function getHalfGridHeight($grid-gap) {
+  @return calc((100vw - #{$grid-gap}) / 2 * (681px / 784px)) ;
+}
+
