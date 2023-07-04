@@ -4,11 +4,10 @@
     max-width: 50%;
     color: $black-green;
     margin-bottom: 48px;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
 
     @include rwd-max(1599) {
       font-size: 52px;
-      transition: all 0.3s ease-in;
     }
 
     @include rwd-max(1439) {
@@ -44,11 +43,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 32px;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
 
     @include rwd-max(1439) {
       grid-gap: 24px;
-      transition: all 0.3s ease-in;
     }
 
     @include rwd-max(1279) {
@@ -75,7 +73,7 @@
 
   &__card {
     position: relative;
-    transition: background-color 0.3s ease-in;
+    transition: background-color 0.3s ease-out;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.7);
@@ -88,8 +86,21 @@
         }
 
         &-title {
-          margin-bottom: 100px;
-          transition: margin-bottom 0.3s ease-in;
+          align-items: end;
+          margin-bottom: 24px;
+
+          @include rwd-max(767) {
+            margin-bottom: 12px;
+          }
+
+          @include rwd-max(479) {
+            margin-bottom: 24px;
+          }
+        }
+
+        &-caption {
+          display: block;
+          opacity: 1;
         }
       }
     }
@@ -101,7 +112,7 @@
       top: 0;
       bottom: 0;
       background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.00) 50%);
-      transition: all 0.3s ease-in;
+      transition: all 0.3s ease-out;
     }
 
     &-img-container {
@@ -114,11 +125,10 @@
       width: 100%;
       object-fit: cover;
       object-position: center;
-      transition: all 0.3s ease-out;
+      transition: height 0.3s ease-in-out;
 
       @include rwd-max(1439) {
         @include getGridImgHeight(24px, 4, $container-mg-1024, 503px, 328px);
-        transition: all 0.3s ease-in;
       }
 
       @include rwd-max(1279) {
@@ -163,7 +173,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: all 0.3s ease-out;
 
       &--tl {
         width: min-content;
@@ -172,7 +181,6 @@
       @include rwd-max(1599) {
         font-size: 24px;
         margin-bottom: 16px;
-        transition: all 0.3s ease-in;
       }
 
       @include rwd-max(1439) {
@@ -210,7 +218,44 @@
     }
     
     &-caption {
+      @extend %body-5-font-styles;
+      color: $retreat-plan-card-bg;
+      margin: 0 24px 40px;
       display: none;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+        margin: 0 16px 24px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+        margin: 0 24px 40px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 14px;
+        margin: 0 16px 24px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 20px;
+        margin: 0 24px 40px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 18px;
+      }
     }
   }
 }

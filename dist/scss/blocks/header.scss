@@ -1,6 +1,5 @@
 .header {
-  padding: 24px 96px 0px;
-  // display: none;
+  padding: 24px 96px 10px;
   position: fixed;
   right: 0;
   left: 0;
@@ -8,4 +7,182 @@
   justify-content: space-between;
   align-items: center;
   z-index: 3;
+  background-color: $white-main;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(1479) {
+    padding: 24px $container-mg-1024 10px;
+  }
+
+  @include rwd-max(1023) {
+    padding: 32px $container-mg-480 10px;
+  }
+
+  @include rwd-max(479) {
+    padding: 32px $container-mg-375 10px;
+    padding-bottom: 24px;
+  }
+
+  @include rwd-max(374) {
+    padding: 32px $container-mg-320 10px;
+  }
+
+  &__menu-toggle {
+    display: none;
+
+    @include rwd-max(1023) {
+      position: absolute;
+      display: block;
+      height: 42px;
+      width: 42px;
+      right: $container-mg-480;
+      z-index: 3;
+      opacity: 0;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    @include rwd-max(479) {
+      right: $container-mg-375;
+      height: 32px;
+      width: 32px;
+    }
+
+    @include rwd-max(374) {
+      right: $container-mg-320;
+    }
+
+    &:checked ~ .menu {
+        transform: translateX(0);
+    }
+
+    &:checked ~ .burger {
+      .burger__line--1 {
+        transform: rotate(45deg);
+      }
+
+      .burger__line--2 {
+        transform: scaleY(0);
+      }
+      .burger__line--3 {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+}
+
+.burger {
+  display: none;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(1023) {
+    display: block;
+    right: $container-mg-480;
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+
+    &__line {
+      display: block;
+      height: 3px;
+      width: 32px;
+      border-radius: 10px;
+      background: $primary-green;
+
+      &--1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      &--2 {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &--3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+  }
+
+  @include rwd-max(479) {
+    right: $container-mg-375;
+    width: 32px;
+    height: 32px;
+  }
+
+  @include rwd-max(374) {
+    right: $container-mg-320;
+  }
+}
+
+.menu {
+  display: none;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(1023) {
+    height: 100vh;
+    background-color: $white-main;
+    transform: translateX(100%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+    display: flex;
+    align-items: flex-start;
+    gap: 64px;
+    flex-direction: column;
+    padding: 32px 80px;
+  }
+
+  @include rwd-max(767) {
+    padding: 84px 40px;
+  }
+
+  @include rwd-max(479) {
+    align-items: stretch;
+    padding: 84px $container-mg-375;
+  }
+
+  @include rwd-max(374) {
+    padding: 84px $container-mg-320;
+  }
+
+  &__contact-info {
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      align-items: center;
+      gap: 14px;
+    }
+  }
+
+  &__contact-link {
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      text-decoration: none;
+      color: #afadb2;
+      font: 16px $ff-main;
+
+      &:hover {
+        text-underline-position: under;
+        text-decoration: underline;
+      }
+    }
+
+    @include rwd-max(374) {
+      font-size: 14px;
+    }
+  }
 }

@@ -1,20 +1,18 @@
 .coaches {
   padding: 80px 0;
-  transition: all 0.3s ease-out;
+  transition: padding .3s ease-in-out;
 
   @include rwd-max(767) {
     padding: 40px 0;
-    transition: all 0.3s ease-in;
   }
 
   &__text-content {
     display: flex;
     gap: 35px;
     margin-bottom: 48px;
-    transition: all 0.3s ease-out;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1279) {
-      transition: all 0.3s ease-in;
       margin-bottom: 36px;
     }
 
@@ -29,11 +27,10 @@
     @extend %heading-1-font-styles;
     flex: 1 60%;
     color: $black-green;
-    transition: all 0.3s ease-out;
+    transition: font-size .3s ease-in-out;
 
     @include rwd-max(1599) {
       font-size: 52px;
-      transition: all 0.3s ease-in;
     }
 
     @include rwd-max(1439) {
@@ -65,12 +62,10 @@
     @extend %body-5-font-styles;
     flex: 1 40%;
     color: $gray-main;
-
-    transition: all 0.3s ease-out;
+    transition: font-size .3s ease-in-out;
 
     @include rwd-max(1599) {
       font-size: 17px;
-      transition: all 0.3s ease-in;
     }
 
     @include rwd-max(1439) {
@@ -103,13 +98,12 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 32px;
     place-items: start;
-    transition: all 0.3s ease-out;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1023) {
       column-gap: 0;
       row-gap: 32px;
       grid-template-columns: 1fr 4fr 1fr;
-      transition: all 0.3s ease-in;
     }
 
     @include rwd-max(767) {
@@ -163,10 +157,9 @@
       object-position: center;
       object-fit: cover;
       width: 100%;
-      transition: all 0.3s ease-out;
+      transition: height 0.3s ease-in-out, all .3s ease-out;
 
       @include rwd-max(1439) {
-        transition: all 0.3s ease-in;
         @include getGridImgHeight(32px, 3, $container-mg-1024, 505px, 448px);
       }
 
@@ -208,10 +201,10 @@
       transition: all 0.3s ease-out;
       font: 28px/130% $ff-headings;
       color: $black-green;
+      transition: font-size .3s ease-in-out;
 
       @include rwd-max(1599) {
         font-size: 26px;
-        transition: font-size 0.3s ease-out;
       }
 
       @include rwd-max(1439) {
@@ -242,11 +235,10 @@
     &-coach-about {
       @extend %body-5-font-styles;
       color: $gray-main;
-      transition: font-size 0.3s ease-in;
+      transition: font-size .3s ease-in-out;
 
       @include rwd-max(1599) {
         font-size: 18px;
-        transition: font-size 0.3s ease-out;
       }
 
       @include rwd-max(1439) {

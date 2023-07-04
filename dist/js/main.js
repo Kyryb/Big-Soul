@@ -1,8 +1,12 @@
 import Swiper from 'swiper/bundle';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import 'swiper/css/bundle';
 
-console.log("Hello world");
+AOS.init({
+  // disable: 'mobile',
+});
+
 const heroSwiper = new Swiper('.hero__swiper', {
   autoplay: {
     delay: 3000,
@@ -21,6 +25,7 @@ const heroSwiper = new Swiper('.hero__swiper', {
   // followFinger: false,
   effect: 'slide',
   preventInteractionOnTransition: true,
+  resizeObserver: false,
 })
 
 const changesSwiper = new Swiper('.changes__swiper', {
@@ -44,6 +49,7 @@ const changesSwiper = new Swiper('.changes__swiper', {
   speed: 500,
   keyboard: true,
   longSwipes: false,
+  resizeObserver: false,
 })
 
 changesSwiper.on('transitionStart', function() {
@@ -86,6 +92,7 @@ const reviews= new Swiper('.reviews__swiper', {
   keyboard: true,
   longSwipes: true,
   slidesPerView: 1,
+  resizeObserver: false,
   breakpoints: {
     320: {
       slidesPerView: 1,
@@ -141,10 +148,12 @@ const enableSwiper = function() {
       spaceBetween: 16,
       direction: 'horizontal',
       speed: 300,
+      resizeObserver: false,
       breakpoints: {
         768: {
           slidesPerView: 2,
         }
+        
       }
    });
 };
@@ -175,3 +184,71 @@ for (let cardSelector of cardSelectors) {
     cardsArray.at(selectorIndex).classList.add('retreat-plan__card--active');
   })
 }
+
+
+const menuToggle = document.getElementById('menuToggle');
+const menuLinks = document.querySelectorAll('.menu__link');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.checked = false;
+    document.body.classList.remove('page--with-menu');
+  });
+});
+
+menuToggle.addEventListener('change', () => {
+  if (menuToggle.checked) {
+    document.body.classList.add('page--with-menu');
+  } else {
+    document.body.classList.remove('page--with-menu');
+  }
+});
+
+let resizeTimeout;
+
+window.addEventListener('resize', () => {
+  const menuStyle = window.getComputedStyle(menu);
+  const isMenuHidden = menuStyle.display === 'none';
+  if (isMenuHidden) {
+    document.body.classList.remove('page--with-menu');
+  }
+  else if(!isMenuHidden && menuToggle.checked){
+    document.body.classList.add('page--with-menu');
+  }
+
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    const activeContent = document.querySelector('.faq__accordion-tab--active .faq__accordion-tab-content');
+    if (activeContent) {
+      updateMaxHeight(activeContent);
+    }
+  }, 300);
+});
+
+const accordionTabs = document.querySelectorAll('.faq__accordion-tab');
+
+function updateMaxHeight(content) {
+  if (content.style.maxHeight) {
+    content.style.maxHeight = content.scrollHeight + 'px';
+  }
+}
+
+accordionTabs.forEach(tab => {
+  const button = tab.querySelector('.faq__accordion-tab-control');
+  const content = tab.querySelector('.faq__accordion-tab-content');
+
+  button.addEventListener('click', () => {
+    tab.classList.toggle('faq__accordion-tab--active');
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+  });
+});
+
+
+
+
+
+

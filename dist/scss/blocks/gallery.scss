@@ -1,10 +1,9 @@
 .gallery {
   padding: 108px 0;
-  transition: padding .3s ease-out;
+  transition: padding .3s ease-in-out;
 
   @include rwd-max(1023) {
     padding: 64px 0;
-    transition: padding .3s ease-in;
   }
 
   &__title {
@@ -13,10 +12,9 @@
     color: $black-green;
     max-width: 1200px;
     margin: 0 auto 28px;
-    transition: all .3s ease-out;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1279) {
-      transition: all .3s ease-in;
       font-size: 48px;
     }
 
@@ -45,11 +43,10 @@
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     align-self: center;
-    transition: font-size .3s ease-out;
+    transition: font-size .3s ease-in-out;
 
     @include rwd-max(1599) {
       font-size: 72px;
-      transition: font-size .3s ease-in;
     }
 
     @include rwd-max(1279) {
@@ -84,11 +81,10 @@
     max-width: 1600px;
     grid-template-rows: 7fr 13fr;
     column-gap: 35px;
-    transition: all .3s ease-out;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1599) {
       grid-template-rows: 5fr 8fr;
-      transition: all .3s ease-in;
     }
 
     @include rwd-max(1439) {
@@ -102,7 +98,6 @@
 
     @include rwd-max(1023) {
       column-gap: 16px;
-
     }
 
     @include rwd-max(767) {
@@ -127,7 +122,6 @@
     flex-direction: column;
     gap: 24px;
     grid-row: 1 / 3;
-
 
     @include rwd-max(767) {
       flex-direction: row;

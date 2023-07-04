@@ -1,11 +1,10 @@
 .container {
   margin: 0 $container-mg;
   height: 100%;
-  transition: margin 0.3s ease-out;
+  transition: margin 0.3s ease-in-out;
 
   @include rwd-max(1439) {
     margin: 0 $container-mg-1024;
-    transition: margin 0.3s ease-in;
   }
 
   @include rwd-max(1023) {

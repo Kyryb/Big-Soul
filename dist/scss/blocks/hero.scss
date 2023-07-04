@@ -3,7 +3,6 @@
   height: 100vh;
 
   @include rwd-max(1023) {
-    padding-top: 88px;
     display: flex;
     flex-direction: column-reverse;
     gap: 36px;
@@ -19,6 +18,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 32px;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1439) {
       padding-top: 68px;
@@ -32,6 +32,7 @@
 
   &__content {
     align-self: center;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(767) {
       display: flex;
@@ -48,10 +49,12 @@
     padding: 24px 22px;
     background-color: $bg-hero-unique;
     margin-bottom: 80px;
+    transition: all .3s ease-in-out;
 
     &-text {
       @extend %body-4-font-styles;
       color: $hero-unique-gray;
+      transition: font-size .3s ease-in-out;
 
       @include rwd-max(1279) {
        font-size: 16px;
@@ -93,6 +96,7 @@
     @extend %heading-1-font-styles;
     color: $black-green;
     margin-bottom: 48px;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1599) {
       font-size: 52px;
@@ -123,6 +127,7 @@
     padding: 4px 16px 12px 12px;
     margin-bottom: 42px;
     background-color: rgba($primary-green, 0.10);
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1439) {
       margin-bottom: 36px;
@@ -148,6 +153,7 @@
     @extend %body-5-font-styles;
     color: $hero-unique-gray;
     margin-bottom: 48px;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1439) {
       margin-bottom: 36px;
@@ -168,6 +174,7 @@
 
   &__swiper {
     height: 100%;
+    transition: height .3s ease-in-out;
 
     @include rwd-max(1023) {
       height: 454px;
@@ -179,11 +186,17 @@
       position: absolute;
       top: 0;
       right: 0;
+      transition: all .3s ease-in-out;
 
       @include rwd-max(1023) {
         position: static;
         width: 100%;
         height: fit-content;
+        padding-top: 84px;
+      }
+
+      @include rwd-max(479) {
+        padding-top: 74px;
       }
     }
 
@@ -212,6 +225,7 @@
         height: 15px;
         background-color: #AFADB2;
         opacity: 1;
+        transition: all .3s ease-in-out;
 
         @include rwd-max(767) {
           width: 8px;

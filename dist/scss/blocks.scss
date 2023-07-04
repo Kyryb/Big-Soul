@@ -1,18 +1,2965 @@
-@import "blocks/page.scss";
-@import "blocks/section.scss";
-@import "blocks/header.scss";
-@import "blocks/container.scss";
-@import "blocks/icon.scss";
-@import "blocks/hero.scss";
-@import "blocks/nav.scss";
-@import "blocks/btn.scss";
-@import "blocks/retreat-about.scss";
-@import "blocks/gallery.scss";
-@import "blocks/target.scss";
-@import "blocks/changes.scss";
-@import "blocks/services.scss";
-@import "blocks/coaches.scss";
-@import "blocks/contact-us.scss";
-@import "blocks/retreat-plan.scss";
-@import "blocks/footer.scss";
-@import "blocks/reviews.scss";
+// #region header block
+
+.header {
+  padding: 24px 96px 10px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  background-color: $white-main;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(1479) {
+    padding: 24px $container-mg-1024 10px;
+  }
+
+  @include rwd-max(1023) {
+    padding: 32px $container-mg-480 10px;
+  }
+
+  @include rwd-max(479) {
+    padding: 32px $container-mg-375 10px;
+    padding-bottom: 24px;
+  }
+
+  @include rwd-max(374) {
+    padding: 32px $container-mg-320 10px;
+  }
+
+  &__menu-toggle {
+    display: none;
+
+    @include rwd-max(1023) {
+      position: absolute;
+      display: block;
+      height: 42px;
+      width: 42px;
+      right: $container-mg-480;
+      z-index: 3;
+      opacity: 0;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    @include rwd-max(479) {
+      right: $container-mg-375;
+      height: 32px;
+      width: 32px;
+    }
+
+    @include rwd-max(374) {
+      right: $container-mg-320;
+    }
+
+    &:checked ~ .menu {
+        transform: translateX(0);
+    }
+
+    &:checked ~ .burger {
+      .burger__line--1 {
+        transform: rotate(45deg);
+      }
+
+      .burger__line--2 {
+        transform: scaleY(0);
+      }
+      .burger__line--3 {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+}
+
+.burger {
+  display: none;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(1023) {
+    display: block;
+    right: $container-mg-480;
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+
+    &__line {
+      display: block;
+      height: 3px;
+      width: 32px;
+      border-radius: 10px;
+      background: $primary-green;
+
+      &--1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      &--2 {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &--3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+  }
+
+  @include rwd-max(479) {
+    right: $container-mg-375;
+    width: 32px;
+    height: 32px;
+  }
+
+  @include rwd-max(374) {
+    right: $container-mg-320;
+  }
+}
+
+.menu {
+  display: none;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(1023) {
+    height: 100vh;
+    background-color: $white-main;
+    transform: translateX(100%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+    display: flex;
+    align-items: flex-start;
+    gap: 64px;
+    flex-direction: column;
+    padding: 32px 80px;
+  }
+
+  @include rwd-max(767) {
+    padding: 84px 40px;
+  }
+
+  @include rwd-max(479) {
+    align-items: stretch;
+    padding: 84px $container-mg-375;
+  }
+
+  @include rwd-max(374) {
+    padding: 84px $container-mg-320;
+  }
+
+  &__contact-info {
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      align-items: center;
+      gap: 14px;
+    }
+  }
+
+  &__contact-link {
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      text-decoration: none;
+      color: #afadb2;
+      font: 16px $ff-main;
+
+      &:hover {
+        text-underline-position: under;
+        text-decoration: underline;
+      }
+    }
+
+    @include rwd-max(374) {
+      font-size: 14px;
+    }
+  }
+}
+// #endregion
+
+// #region hero block
+.hero {
+  position: relative;
+  height: 100vh;
+
+  @include rwd-max(1023) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 36px;
+    height: fit-content;
+  }
+
+  @include rwd-max(479) {
+    gap: 40px;
+  }
+
+  &__wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1439) {
+      padding-top: 68px;
+    }
+
+    @include rwd-max(1023) {
+      display: block;
+      padding-top: 0;
+    }
+  }
+
+  &__content {
+    align-self: center;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(767) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__unique {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    gap: 16px;
+    padding: 24px 22px;
+    background-color: $bg-hero-unique;
+    margin-bottom: 80px;
+    transition: all .3s ease-in-out;
+
+    &-text {
+      @extend %body-4-font-styles;
+      color: $hero-unique-gray;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1279) {
+       font-size: 16px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 12px;
+      }
+    }
+
+    @include rwd-max(1599) {
+      margin-bottom: 64px;
+    }
+
+    @include rwd-max(1439) {
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    @include rwd-max(1279) {
+      padding: 16px;
+    }
+
+    @include rwd-max(1023) {
+      margin-bottom: 36px;
+    }
+
+    @include rwd-max(479) {
+      min-width: 100%;
+      margin-bottom: 40px;
+    }
+
+    @include rwd-max(374) {
+      padding: 8px;
+    }
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    margin-bottom: 48px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      margin-bottom: 36px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+      margin-bottom: 24px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+  }
+
+  &__subtitle {
+    @extend %heading-2-font-styles;
+    color: $black-secondary;
+    max-width: fit-content;
+    padding: 4px 16px 12px 12px;
+    margin-bottom: 42px;
+    background-color: rgba($primary-green, 0.10);
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1439) {
+      margin-bottom: 36px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    @include rwd-max(767) {
+      width: 100%;
+      max-width: none;
+      text-align: center;
+    }
+
+    @include rwd-max(479) {
+      text-align: start;
+    }
+  }
+
+  &__about {
+    @extend %body-5-font-styles;
+    color: $hero-unique-gray;
+    margin-bottom: 48px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1439) {
+      margin-bottom: 36px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 16px;
+     }
+
+    @include rwd-max(1023) {
+      font-size: 18px;
+    }
+
+    @include rwd-max(479) {
+      margin-bottom: 40px;;
+    }
+  }
+
+  &__swiper {
+    height: 100%;
+    transition: height .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      height: 454px;
+    }
+
+    &-container {
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(1023) {
+        position: static;
+        width: 100%;
+        height: fit-content;
+        padding-top: 84px;
+      }
+
+      @include rwd-max(479) {
+        padding-top: 74px;
+      }
+    }
+
+    &-img-container {
+      height: 100%;
+      display: block;
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .swiper-pagination {
+      bottom: 40px !important;
+
+      @include rwd-max(1023) {
+        bottom: 16px !important;
+      }
+
+      &-bullet {
+        margin: 0 8px !important;
+        width: 15px;
+        height: 15px;
+        background-color: #AFADB2;
+        opacity: 1;
+        transition: all .3s ease-in-out;
+
+        @include rwd-max(767) {
+          width: 8px;
+          height: 8px;
+          margin: 0 4px !important;
+        }
+  
+        &-active {
+          background-color: $white-main;
+        }
+      }
+    }
+  }
+}
+// #endregion
+
+// #region video block
+.video {
+  position: relative;
+
+  &__preview-container {
+    display: block;
+  }
+
+  &__preview {
+    width: 100vw;
+    height: calc(100vw * (1001px / 1600px));
+  }
+
+  &__play {
+    background: url(../../../assets/images/icons/video-play-large.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 124px;
+    height: 124px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    @include rwd-max(767) {
+      background: url(../../../assets/images/icons/video-play.svg);
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+// #endregion
+
+// #region retreat-about block
+.retreat-about {
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    margin-bottom: 56px;
+    transition: font-size 0.3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      margin-bottom: 40px;;
+    }
+
+    @include rwd-max(767) {
+      font-size: 32px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 24px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 32px;
+    transition: flex-direction 0.3s ease-in-out;
+
+    @include rwd-max(1023) {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    @extend %body-5-font-styles;
+    flex: 1 50%;
+    color: $gray-main;
+    transition: all 0.3s ease-in-out;
+
+    @include rwd-max(1439) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 14px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 18px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 14px;
+    }
+  }
+
+  &__img-container {
+    flex: 1 50%;
+  }
+
+  &__img {
+    @include getGridImgHeight(32px, 2, $container-mg, 454px, 688px);
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    transition: height 0.3s ease-in-out;
+
+    @include rwd-max(1439) {
+      @include getGridImgHeight(32px, 2, $container-mg-1024, 454px, 688px);
+    }
+
+    @include rwd-max(1023) {
+      @include getGridImgHeight(0px, 1, $container-mg-480, 454px, 688px);
+    }
+
+    @include rwd-max(479) {
+      @include getGridImgHeight(0px, 1, $container-mg-375, 454px, 688px);
+    }
+
+    @include rwd-max(374) {
+      @include getGridImgHeight(0px, 1, $container-mg-320, 454px, 688px);
+    }
+  }
+}
+// #endregion
+
+// #region gallery block
+.gallery {
+  padding: 108px 0;
+  transition: padding .3s ease-in-out;
+
+  @include rwd-max(1023) {
+    padding: 64px 0;
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    text-align: center;
+    color: $black-green;
+    max-width: 1200px;
+    margin: 0 auto 28px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
+  }
+  
+  &__subtitle {
+    text-align: center;
+    font:italic 90px/118% $ff-headings;
+    color: $primary-green;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: center;
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 72px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 58px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 42px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 42px;
+      margin-bottom: 56px;
+      grid-column: 1;
+      grid-row: 1 / 2;
+    }
+
+    @include rwd-max(479) {
+      font-size: 32px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 28px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    padding: 0 25px;
+    margin: 0 auto;
+    grid-template-columns: auto 1fr auto;
+    max-width: 1600px;
+    grid-template-rows: 7fr 13fr;
+    column-gap: 35px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      grid-template-rows: 5fr 8fr;
+    }
+
+    @include rwd-max(1439) {
+      column-gap: 24px;
+      grid-template-rows: 1fr 2fr;
+    }
+
+    @include rwd-max(1279) {
+      grid-template-rows: 5fr 9fr;
+    }
+
+    @include rwd-max(1023) {
+      column-gap: 16px;
+    }
+
+    @include rwd-max(767) {
+      padding: 0 $container-mg-480;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+      column-gap: 0;
+      justify-content: space-between;
+    }
+
+    @include rwd-max(479) {
+      padding: 0 $container-mg-375;
+    }
+
+    @include rwd-max(374) {
+      padding: 0 $container-mg-320;
+    }
+  }
+
+  &__grid-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    grid-row: 1 / 3;
+
+    @include rwd-max(767) {
+      flex-direction: row;
+    }
+
+    &--1 {
+      @include rwd-max(767) {
+        grid-row: 2 / 3;
+        margin-bottom: 24px;
+      }
+    }
+
+    &--2 {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+
+      @include rwd-max(767) {
+        grid-column: 1;
+        grid-row: 3 / 4;
+        margin-bottom: 24px;
+      }
+    }
+
+    &--3 {
+      @include rwd-max(767) {
+        grid-row: 4 / 5;
+      }
+    }
+  }
+
+  &__item {
+
+    @include rwd-max(767) {
+      flex: 1;
+    }
+
+    &--wide {
+      width: 100%;
+      align-self: flex-end;
+    }
+  }
+
+  &__img {
+    object-position: center;
+    object-fit: cover;
+    width: 280px;
+    height: 380px;
+    transition: all .3s ease-out;
+
+    @include rwd-max(1599) {
+      width: 250px;
+      height: getGalleryHeight(250px);
+    }
+
+    @include rwd-max(1439) {
+      width: 220px;
+      height: getGalleryHeight(220px);
+    }
+
+    @include rwd-max(1279) {
+      width: 180px;
+      height: getGalleryHeight(180px);
+    }
+
+    @include rwd-max(1023) {
+      width: 150px;
+      height: getGalleryHeight(150px);
+    }
+
+    @include rwd-max(767) {
+      width: 100%;
+      height: getGalleryHeight(186px);
+    }
+
+    @include rwd-max(479) {
+      height: getGalleryHeight(152px);
+    }
+
+    @include rwd-max(374) {
+      height: getGalleryHeight(132px);
+    }
+
+    &--wide {
+      height: 506px;
+      width: 100%;
+
+      @include rwd-max(1599) {
+        transition: all .3s ease-in;
+        height: 430px;
+      }
+
+      @include rwd-max(1439) {
+        height: 410px;
+      }
+
+      @include rwd-max(1279) {
+        height: 330px;
+      }
+
+      @include rwd-max(1023) {
+        height: 276px;
+      }
+
+      @include rwd-max(479) {
+        height: 176px;
+      }
+    }
+  }
+}
+//#endregion
+
+// #region target block
+.target {
+  &__section-title {
+    padding-left: $container-mg;
+
+    @include rwd-max(1439) {
+      padding-left: $container-mg-1024;
+    }
+
+    @include rwd-max(1023) {
+      padding-left: 0;
+      grid-row: 1;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 32px;
+    transition: all 0.3s ease-in-out;
+
+    @include rwd-max(1023) {
+      padding: 0 $container-mg-480;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      column-gap: 0;
+    }
+
+    @include rwd-max(479) {
+      padding: 0 $container-mg-375 0 calc($container-mg-375 - 1px);
+    }
+
+    @include rwd-max(374) {
+      padding: 0 $container-mg-320;
+    }
+  }
+
+  &__content {
+    grid-row: 2;
+    padding-left: $container-mg;
+    transition: padding 0.3s ease-in-out;
+
+    @include rwd-max(1439) {
+      padding-left: $container-mg-1024;
+    }
+
+    @include rwd-max(1023) {
+      padding-left: 0;
+      grid-row: 3;
+    }
+  }
+
+  &__title {
+    font: 60px/135% $ff-headings;
+    color: $default-black;
+    margin-bottom: 32px;
+    transition: font-size 0.3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+      margin-bottom: 24px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 32px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
+  }
+
+  &__info {
+    font: 24px/150% $ff-main;
+    color: $gray-main;
+    margin-bottom: 24px;
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 20px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 20px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 14px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: gap .3s ease-in-out;
+
+    @include rwd-max(1439) {
+      gap: 16px;
+    }
+
+    @include rwd-max(1023) {
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 36px;
+    font: 24px/150% $ff-main;
+    color: $gray-main;
+    transition: font-size 0.3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 20px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 18px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 20px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 14px;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(../../../assets/images/icons/star-32.svg);
+      background-repeat: no-repeat;
+      background-position: start;
+      width: 32px;
+      flex-shrink: 0;
+
+      @include rwd-max(1599) {
+        background-image: url(../../../assets/images/icons/star-26.svg);
+        width: 26px;
+      }
+
+      @include rwd-max(1439) {
+        background-image: url(../../../assets/images/icons/star-24.svg);
+        width: 24px;
+      }
+
+      @include rwd-max(1279) {
+        background-image: url(../../../assets/images/icons/star-22.svg);
+        width: 22px;
+      }
+
+      @include rwd-max(1023) {
+        background-image: url(../../../assets/images/icons/star-24.svg);
+        width: 24px;
+      }
+    }
+  }
+
+  &__img-container {
+    grid-row: 1/ 3;
+
+    @include rwd-max(1023) {
+      grid-row: 2;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    object-position: center;
+    height: getHalfGridHeight(32px);
+    width: 100%;
+    transition: height .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      max-height: 680px;
+      height: calc((100vw - $container-mg-480 * 2) * (681px / 784px));
+    }
+
+    @include rwd-max(479) {
+      height: calc((100vw - $container-mg-375 * 2) * (350px / 328px));
+    }
+
+    @include rwd-max(374) {
+      height: calc((100vw - $container-mg-320 * 2) * (350px / 328px));
+    }
+  }
+}
+// #endregion
+
+// #region changes block
+.changes {
+  &__swiper {
+    &-slide-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(1023) {
+        display: flex;
+        padding: 0 $container-mg-480;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+
+      @include rwd-max(479) {
+        padding: 0 $container-mg-375;
+      }
+
+      @include rwd-max(374) {
+        padding: 0 $container-mg-320;
+      }
+    }
+
+    &-img {
+      height: getHalfGridHeight(32px);
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      transition: height .3s ease-in-out;
+
+      @include rwd-max(1023) {
+        max-height: 680px;
+        height: calc((100vw - $container-mg-480 * 2) * (681px / 782px));
+      }
+
+      @include rwd-max(479) {
+        height: calc((100vw - $container-mg-375 * 2) * (350px / 328px));
+      }
+
+      @include rwd-max(374) {
+        height: calc((100vw - $container-mg-320 * 2) * (350px / 328px));
+      }
+    }
+
+    &-slide-text {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-height: 85%;
+      overflow: hidden;
+      padding-right: $container-mg;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        padding-right: $container-mg-1024;
+        max-height: 80%;
+      }
+
+      @include rwd-max(1279) {
+        gap: 16px;
+        max-height: 84%;
+      }
+
+      @include rwd-max(1023) {
+        padding: 0;
+        max-height: 100%;
+      }
+
+      @include rwd-max(767) {
+        gap: 24px;
+      }
+    }
+
+    &-slide-title {
+      @extend %heading-1-font-styles;
+      color: $black-green;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 52px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 48px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 38px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 56px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 32px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 26px;
+      }
+    }
+
+    &-slide-about {
+      @extend %body-3-font-styles;
+      color: $gray-main;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
+    }
+
+    &-nav-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+
+      @include rwd-max(1023) {
+        display: block;
+        position: static;
+      }
+    }
+
+    &-nav {
+      z-index: 2;
+      grid-column: 2 / 3;
+      display: flex;
+      gap: 32px;
+      padding-right: $container-mg;
+      transition: padding .3s ease-in-out;
+
+      @include rwd-max(1023) {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        padding: 0 $container-mg-480;
+      }
+
+      @include rwd-max(479) {
+        padding: 0 $container-mg-375;
+      }
+
+      @include rwd-max(374) {
+        padding: 0 $container-mg-320;
+      }
+
+      &-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+        transition: gap .3s ease-in-out;
+
+        @include rwd-max(1279) {
+          gap: 24px;
+        }
+
+        @include rwd-max(1023) {
+          justify-content: center;
+        }
+      }
+
+      &--hidden {
+        opacity: 0;
+
+        @include rwd-max(1023) {
+          opacity: unset;
+        }
+      }
+
+      .swiper-pagination {
+        position: static;
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+      }
+    }
+  }
+}
+// #endregion
+
+// #region services block
+.services {
+  &__title {
+    font: 60px/135% $ff-headings;
+    max-width: 50%;
+    color: $black-green;
+    margin-bottom: 48px;
+    transition: all 0.3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+      margin-bottom: 32px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 32px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px;
+    transition: all 0.3s ease-in-out;
+
+    @include rwd-max(1439) {
+      grid-gap: 24px;
+    }
+
+    @include rwd-max(1279) {
+      grid-gap: 16px;
+    }
+
+    @include rwd-max(1023) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+      row-gap: 16px;
+    }
+
+    @include rwd-max(767) {
+      column-gap: 16px;
+      row-gap: 24px;
+    }
+
+    @include rwd-max(479) {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 32px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: background-color 0.3s ease-in;
+      
+      .services__card {
+        &-blur {
+          opacity: 0;
+          transition: opacity 0.3s ease-in;
+        }
+
+        &-title {
+          align-items: end;
+          margin-bottom: 24px;
+
+          @include rwd-max(767) {
+            margin-bottom: 12px;
+          }
+
+          @include rwd-max(479) {
+            margin-bottom: 24px;
+          }
+        }
+
+        &-caption {
+          display: block;
+          opacity: 1;
+        }
+      }
+    }
+
+    &-blur {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.00) 50%);
+      transition: all 0.3s ease-out;
+    }
+
+    &-img-container {
+      display: block;
+    }
+
+    &-img {
+      @include getGridImgHeight(32px, 4, $container-mg, 503px, 328px);
+      mix-blend-mode: multiply;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: height 0.3s ease-in-out;
+
+      @include rwd-max(1439) {
+        @include getGridImgHeight(24px, 4, $container-mg-1024, 503px, 328px);
+      }
+
+      @include rwd-max(1279) {
+        @include getGridImgHeight(16px, 4, $container-mg-1024, 503px, 328px);
+      }
+
+      @include rwd-max(1023) {
+        @include getGridImgHeight(24px, 2, $container-mg-480, 503px, 328px);
+      }
+
+      @include rwd-max(767) {
+        @include getGridImgHeight(16px, 2, $container-mg-480, 503px, 328px);
+      }
+
+      @include rwd-max(479) {
+        @include getGridImgHeight(0px, 1, $container-mg-375, 503px, 328px);
+      }
+
+      @include rwd-max(374) {
+        @include getGridImgHeight(0px, 1, $container-mg-320, 503px, 328px);
+      }
+    }
+
+    &-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    &-title {
+      box-sizing: content-box;
+      height: 72px;
+      margin: 0px 16px 24px;
+      text-align: center;
+      font: 28px/130% $ff-headings;
+      color: $white-main;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--tl {
+        width: min-content;
+      }
+
+      @include rwd-max(1599) {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 22px;
+      }
+
+      @include rwd-max(1279) {
+        height: 48px;
+        font-size: 18px;
+        margin: 0 8px 12px;
+      }
+
+      @include rwd-max(1023) {
+        height: 72px;
+        margin: 0px 12px 24px;
+        font-size: 28px;
+      }
+
+      @include rwd-max(767) {
+        height: 48px;
+        font-size: 16px;
+        margin: 0 8px 8px;
+      }
+
+      @include rwd-max(479) {
+        height: 72px;
+        margin: 0px 16px 24px;
+        font-size: 28px;
+      }
+
+      @include rwd-max(374) {
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+    }
+    
+    &-caption {
+      @extend %body-5-font-styles;
+      color: $retreat-plan-card-bg;
+      margin: 0 24px 40px;
+      display: none;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+        margin: 0 16px 24px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+        margin: 0 24px 40px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 14px;
+        margin: 0 16px 24px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 20px;
+        margin: 0 24px 40px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+// #endregion
+
+// #region coaches block
+.coaches {
+  padding: 80px 0;
+  transition: padding .3s ease-in-out;
+
+  @include rwd-max(767) {
+    padding: 40px 0;
+  }
+
+  &__text-content {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 48px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      margin-bottom: 36px;
+    }
+
+    @include rwd-max(1023) {
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    flex: 1 60%;
+    color: $black-green;
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
+  }
+
+  &__about {
+    @extend %body-5-font-styles;
+    flex: 1 40%;
+    color: $gray-main;
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 17px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 13px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 20px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 18px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 16px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 14px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    place-items: start;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      column-gap: 0;
+      row-gap: 32px;
+      grid-template-columns: 1fr 4fr 1fr;
+    }
+
+    @include rwd-max(767) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include rwd-max(1023) {
+      grid-column: 2;
+    }
+
+    &:hover {
+      .coaches__card {
+        &-coach-ig-icon {
+          transition: all 0.3s ease-in;
+          transform: scale(1.1);
+        }
+
+        &-coach-name {
+          transition: text-decoration 0.3s ease-in;
+          text-decoration: underline;
+          text-underline-position: under;
+        }
+      }
+      .coaches__card-img--back {
+        transition: opacity 0.3s ease-in;
+        opacity: 1;
+      }
+      .coaches__card-img--front {
+        transition: opacity 0.3s ease-in;
+        opacity: 0;
+      }
+    }
+
+    &-images {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    &-img-container {
+      display: block;
+    }
+
+    &-img {
+      @include getGridImgHeight(32px, 3, $container-mg, 505px, 448px);
+      object-position: center;
+      object-fit: cover;
+      width: 100%;
+      transition: height 0.3s ease-in-out, all .3s ease-out;
+
+      @include rwd-max(1439) {
+        @include getGridImgHeight(32px, 3, $container-mg-1024, 505px, 448px);
+      }
+
+      @include rwd-max(1023) {
+        @include getGridImgHeight(0px, 1.5, $container-mg-480, 349px, 328px);
+      }
+
+      @include rwd-max(767) {
+        @include getGridImgHeight(0px, 1, $container-mg-480, 349px, 328px);
+      }
+
+      @include rwd-max(479) {
+        @include getGridImgHeight(0px, 1, $container-mg-375, 349px, 328px);
+      }
+
+      @include rwd-max(374) {
+        @include getGridImgHeight(0px, 1, $container-mg-320, 349px, 328px);
+      }
+
+      &--front {
+        opacity: 1;
+      }
+
+      &--back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
+
+    &-coach-info {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    &-coach-name {
+      transition: all 0.3s ease-out;
+      font: 28px/130% $ff-headings;
+      color: $black-green;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 26px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 24px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 32px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 24px;
+      }
+    }
+
+    &-coach-ig-icon {
+      transition: all 0.3s ease-out;
+    }
+
+    &-coach-about {
+      @extend %body-5-font-styles;
+      color: $gray-main;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
+    }
+
+    &-coach-ig-link {
+      text-decoration: none;
+    }
+  }
+}
+// #endregion
+
+// #region contact-us block
+.contact-us {
+  position: relative;
+  z-index: 1;
+  padding-top: 94px;
+
+  @include rwd-max(1023) {
+    padding-top: 80px;
+  }
+
+  &__background-container {
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+
+  &__background-img {
+    width: 100%;
+    height: 584px;
+    object-fit: cover;
+    object-position: center;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      height: 314px;
+    }
+  }
+
+  &__title {
+    @extend %italic-heading;
+    color: $white-main;
+    text-align: center;
+    margin-bottom: 62px;
+
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      font-size: 72px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 42px;
+      margin-bottom: 64px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 32px;
+    }
+  }
+
+  &__form {
+    padding: 80px;
+    background-color: $white-main;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.07);
+    transition: padding .3s ease-in-out;
+
+    @include rwd-max(1439) {
+      padding: 64px;
+    }
+
+    @include rwd-max(767) {
+      padding: 32px;
+    }
+
+    &-title {
+      @extend %heading-1-font-styles;
+      color: $default-black;
+      text-align: center;
+      margin-bottom: 32px;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 52px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 38px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 56px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 36px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 28px;
+      }
+    }
+
+    &-short-info {
+      @extend %body-5-font-styles;
+      color: $gray-main;
+      text-align: center;
+      margin-bottom: 48px;
+      transition: font-size 0.3s ease-in-out;
+
+      @include rwd-max(1279) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 17px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 15px;
+      }
+    }
+
+    &-elements {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 48px;
+
+      @include rwd-max(1023) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-field {
+      width: 448px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: width .3s ease-in-out;
+
+      @include rwd-max(767) {
+        width: 100%;
+      }
+    }
+
+    &-label {
+      @extend %body-3-font-styles;
+      color: $black-secondary;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 18px;
+      }
+    }
+
+    &-input {
+      @extend %body-3-font-styles;
+      color: $gray-main;
+      border: none;
+      border-bottom: 1px solid $gray-form;
+      padding: 0 0 8px 0;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 18px;
+      }
+
+      &::placeholder {
+        @extend %body-3-font-styles;
+        color: $gray-secondary;
+        transition: font-size 0.3s ease-in-out;
+
+        @include rwd-max(1439) {
+          font-size: 20px;
+        }
+
+        @include rwd-max(479) {
+          font-size: 18px;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $primary-green;
+      }
+    }
+  }
+}
+// #endregion
+
+// #region retreat-plan block
+.retreat-plan {
+
+  &__swiper {
+    margin: 0 !important;
+    transition: padding .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      padding: 0 $container-mg-480 !important;
+    }
+
+    @include rwd-max(479) {
+      padding: 0 $container-mg-375 !important;
+    }
+
+    @include rwd-max(374) {
+      padding: 0 $container-mg-320 !important;
+    }
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    margin-bottom: 48px;
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+  }
+
+  &__content {
+    margin: 0 $container-mg;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1439) {
+      margin: 0 $container-mg-1024;
+    }
+
+    @include rwd-max(1279) {
+      gap: 80px;
+    }
+
+    @include rwd-max(1023) {
+      margin: 0;
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+  }
+  
+  &__cards-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    transition: gap .3s ease-in-out;
+
+    @include rwd-max(1439) {
+      gap: 24px;
+    }
+
+    @include rwd-max(1023) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__cards {
+    position: relative;
+    width: 720px;
+    height: 100%;
+    min-height: 916px;
+    justify-self: center;
+    transition: all 0.3s ease-in-out;
+
+    @include rwd-max(1599) {
+      width: 620px;
+    }
+
+    @include rwd-max(1439) {
+      width: 580px;
+      min-height: 824px;
+    }
+
+    @include rwd-max(1279) {
+      width: 500px;
+      min-height: 700px;
+    }
+
+    @include rwd-max(1023) {
+      width: 100%;
+      min-height: 870px;
+      padding: 0 $container-mg-480;
+    }
+
+    @include rwd-max(479) {
+      padding: 0 $container-mg-375;
+      min-height: 748px;
+    }
+
+    @include rwd-max(374) {
+      min-height: 700px;
+      padding: 0 $container-mg-320;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px 32px 64px;
+    width: 100%;
+    height: 100%;
+    background-color: $retreat-plan-card-bg;
+    transition: padding .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      left: $container-mg-480;
+      right: $container-mg-480;
+      width: unset;
+    }
+    
+    @include rwd-max(767) {
+      padding: 32px 24px;
+    }
+
+    @include rwd-max(479) {
+      left: $container-mg-375;
+      right: $container-mg-375;
+      padding: 32px 16px 32px 16px;
+    }
+
+    @include rwd-max(374) {
+      left: $container-mg-320;
+      right: $container-mg-320;
+    }
+
+    &--active {
+      position: relative;
+      z-index: 1;
+
+      @include rwd-max(1023) {
+        left: 0;
+        right: 0;
+      }
+
+      .retreat-plan__card-content {
+        opacity: 1;
+      }
+    }
+
+    &--bg {
+      opacity: 1;
+      background-color: $primary-green;
+      transform: rotate(2.687deg);
+      transition: transform 0.3s ease-in-out;
+
+      @include rwd-max(767) {
+        transform: rotate(2deg);
+      }
+
+      @include rwd-max(374) {
+        transform: rotate(1.5deg);
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &-title {
+      font: 40px/130% $ff-headings;
+      color: $black-green;
+      margin-bottom: 32px;
+      transition: font-size 0.3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 32px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 26px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 40px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 28px;
+        margin-bottom: 24px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 24px;
+      }
+    }
+
+    &-about {
+      @extend %body-5-font-styles;
+      color: $gray-main;
+      margin-bottom: 24px;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: gap .3s ease-in-out;
+
+      @include rwd-max(767) {
+        gap: 16px;
+      }
+    }
+  
+    &-item {
+      @extend %body-5-font-styles;
+      display: flex;
+      gap: 24px;
+      color: $gray-main;
+      transition: font-size 0.3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 14px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
+
+      &::before {
+        content: "";
+        background-image: url(../../../assets/images/icons/star-26.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 26px;
+        flex-shrink: 0;
+
+        @include rwd-max(1439) {
+          background-image: url(../../../assets/images/icons/star-22.svg);
+          width: 22px;
+        }
+      }
+    }
+
+    &-img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 302px;
+      transition: height .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        height: 256px;
+      }
+
+      @include rwd-max(1439) {
+        height: 238px;
+      }
+
+      @include rwd-max(1279) {
+        height: 200px;
+      }
+
+      @include rwd-max(1023) {
+        height: 286px;
+      }
+
+      @include rwd-max(767) {
+        height: 188px;
+      }
+
+      @include rwd-max(479) {
+        height: 152px;
+      }
+
+      @include rwd-max(374) {
+        height: 156px;
+      }
+    }
+
+    &-selector {
+      display: block;
+      width: 100%;
+      font: 28px/150% $ff-main;
+      cursor: pointer;
+      color: $default-black;
+      padding: 32px;
+      border: 1px solid $gray-retreat-plan;
+      transition: all 0.3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 18px;
+        padding: 24px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 20px;
+        padding: 16px 24px;
+      }
+
+      @include rwd-max(479) {
+        min-width: 304px;
+      }
+
+      @include rwd-max(374) {
+        padding: 12px;
+        font-size: 16px;
+        min-width: unset;
+      }
+
+      &--active {
+        border-color: $primary-green;
+        color: $primary-green;
+      }
+    }
+  }
+}
+// #endregion
+
+// #region reviews block
+.reviews {
+
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    margin-bottom: 48px;
+    transition: font-size 0.3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+      margin-bottom: 32px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
+  }
+
+  &__swiper {
+    padding: 0 $container-mg !important; 
+    transition: all 0.3s ease-in-out;
+
+      @include rwd-max(1439) {
+        padding: 0 $container-mg-1024 !important;
+      }
+
+      @include rwd-max(1023) {
+        padding: 0 $container-mg-480 !important;
+      }
+
+      @include rwd-max(767) {
+        margin-bottom: 40px;
+      }
+
+      @include rwd-max(479) {
+        padding: 0 $container-mg-375 !important;
+      }
+
+      @include rwd-max(374) {
+        padding: 0 $container-mg-320 !important;
+      }
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &-img-container {
+      display: block;
+    }
+
+    &-img {
+      @include getGridImgHeight(32px, 3, $container-mg, 473, 448);
+      width: 100%;
+      object-fit: cover;
+      transition: height .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        @include getGridImgHeight(32px, 3, $container-mg-1024, 473, 448);
+      }
+
+      @include rwd-max(1279) {
+        @include getGridImgHeight(24px, 3, $container-mg-1024, 473, 448);
+      }
+
+      @include rwd-max(1023) {
+        @include getGridImgHeight(24px, 2, $container-mg-480, 473, 448);
+      }
+
+      @include rwd-max(767) {
+        @include getGridImgHeight(0px, 1, $container-mg-480, 523, 328);
+      }
+
+      @include rwd-max(479) {
+        @include getGridImgHeight(0px, 1, $container-mg-375, 523, 328);
+      }
+
+      @include rwd-max(374) {
+        @include getGridImgHeight(0px, 1, $container-mg-320, 523, 328);
+      }
+    }
+
+    &-slides-wrapper {
+      overflow: hidden;
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 32px;
+      position: absolute;
+      top: calc(0px - 48px - 88px);
+      right: $container-mg;
+      transition: gap .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        right: $container-mg-1024;
+      }
+
+      @include rwd-max(1279) {
+        top: calc(0px - 48px - 64px);
+        gap: 24px;
+      }
+
+      @include rwd-max(767) {
+        position: static;
+        justify-content: center;
+      }
+    }
+  } 
+}
+// #endregion
+
+// #region faq block
+.faq {
+  padding: 80px 0;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(767) {
+    padding: 64px 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      flex-direction: column;
+      gap: 64px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
+  }
+
+  .faq__btn {
+    transition: width .3s ease-in-out;
+
+    @include rwd-max(767) {
+      width: 100%;
+    }
+  }
+
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 688px;
+    transition: all .3s ease-in-out;
+
+
+    @include rwd-max(1279) {
+      width: 540px;
+    }
+
+    @include rwd-max(1023) {
+      width: 100%;
+    }
+    
+    &-tab {
+      padding: 24px 40px;
+      transition: all 0.3s ease-in-out;
+
+      @include rwd-max(767) {
+        padding: 24px;
+      }
+
+      @include rwd-max(479) {
+        padding: 24px 20px;
+      }
+
+      @include rwd-max(374) {
+        padding: 24px 16px;
+      }
+
+      &--active {
+        padding: 32px 40px;
+        background-color: $white-main;
+
+        @include rwd-max(767) {
+          padding: 24px;
+        }
+
+        @include rwd-max(479) {
+          padding: 24px 20px;
+        }
+
+        @include rwd-max(374) {
+          padding: 24px 16px;
+        }
+
+        .faq__accordion-tab {
+          &-content {
+            padding-top: 24px;
+            visibility: visible;
+          }
+
+          &-arrow {
+            transform: rotate(180deg);
+            border-color: $primary-green;
+          }
+        }
+      }
+    }
+
+    &-tab-heading {
+      font: 28px/130% $ff-headings;
+      color: $gray-main;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1279) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(767) {
+        text-align: left;
+        font-size: 20px;
+        max-width: 248px;
+      }
+
+      @include rwd-max(479) {
+        max-width: 224px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 18px;
+        max-width: 200px;
+      }
+    }
+
+    &-tab-content {
+      @extend %body-5-font-styles;
+      box-sizing: content-box;
+      color: #4B4C4F;
+      visibility: hidden;
+      max-height: 0;
+      overflow: hidden;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(1279) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 20px;
+      }
+    }
+
+    &-tab-arrow {
+      display: block;
+      background: url(../../../assets/images/icons/arrow-16.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 64px;
+      height: 64px;
+      border: 1px solid #f1e7da;
+      border-radius: 50%;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(767) {
+        width: 48px;
+        height: 48px;
+      }
+
+      @include rwd-max(374) {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    &-tab-control {
+      padding: 0;
+      width: 100%;
+      display: flex;
+      gap: 32px;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      align-items: center;
+      cursor: pointer;
+      justify-content: space-between;
+
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(767) {
+        gap: 24px;
+      }
+
+      @include rwd-max(479) {
+        gap: 16px;
+      }
+    }
+  }
+}
+// #endregion
+
+// #region footer block
+.footer {
+  padding: 56px 0;
+  background-color: $footer-bg;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 98px;
+    transition: gap .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      gap: 80px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include rwd-max(1023) {
+      flex-direction: column;
+      justify-content: unset;
+      align-items: center;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: all 3.3s ease-in-out;
+
+    @include rwd-max(1023) {
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 38px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 24px;
+
+    &-link {
+      line-height: 0;
+    }
+  }
+
+  &__mailing {
+    transition: margin .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__mail-form {
+    display: flex;
+    gap: 32px;
+    transition: gap .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      gap: 16px;
+    }
+
+    @include rwd-max(767) {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
+
+    &-title {
+      @extend %heading-4-font-styles;
+      color: $white-main;
+      margin-bottom: 24px;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 24px;
+        margin-bottom: 36px;
+        text-align: center;
+      }
+
+      @include rwd-max(479) {
+        font-size: 20px;
+        width: 70%;
+        margin: 0 auto 36px auto;
+      }
+
+      @include rwd-max(374) {
+        width: 80%;
+      }
+    }
+
+    &-input {
+      width: 448px;
+      padding: 14px 28px;
+      border: 1px solid $white-main;
+      background-color: $footer-bg;
+      color: $white-main;
+      font: 18px $ff-main;
+      transition: width .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        width: 364px;
+      }
+
+      @include rwd-max(1279) {
+        width: 300px;
+      }
+
+      @include rwd-max(1023) {
+        width: 364px;
+      }
+
+      @include rwd-max(767) {
+        width: 100%;
+      }
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: $white-main;
+        caret-color: $white-main;
+        -webkit-box-shadow: 0 0 0 50px $footer-bg inset;
+      }
+
+      &::placeholder {
+        font: 18px $ff-main;
+        color: $gray-secondary;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__contact-us {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &-title {
+      font: 700 20px $ff-headings;
+      text-transform: uppercase;
+      color: $white-main;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 18px;
+      }
+      
+      @include rwd-max(1279) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    &-link {
+      font: 16px $ff-main;
+      color: $white-main;
+      text-decoration: none;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        font-size: 14px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 12px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 16px;
+        text-align: center;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      font: 300 16px/100% $ff-main;
+      color: $white-main;
+    }
+  }
+}
+// #endregion

@@ -15,6 +15,20 @@
 
     &:hover {
       background-color: $black-green;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  &--header {
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      font-size: 14px;
+      min-width: 190px;
+    }
+
+    @include rwd-max(1023) {
+      display: none;
     }
   }
 
@@ -39,7 +53,6 @@
     border: 1px solid $white-main;
 
     @include rwd-max(1439) {
-      transition: all 0.3s ease-in;
       min-width: fit-content;
     }
 
@@ -51,6 +64,7 @@
       background-color: $white-main;
       color: $black-green;
       border-color: transparent;
+      transition: all 0.3s ease-in;
     }
   }
 }

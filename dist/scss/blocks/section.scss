@@ -19,7 +19,7 @@
     align-items: center;
     color: $black-green;
     margin-bottom: 40px;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
 
     &::after {
       display: inline-block;
@@ -32,7 +32,6 @@
     @include rwd-max(1279) {
       font-size: 14px;
       margin-bottom: 24px;
-      transition: all 0.3s ease-in;
     }
 
     @include rwd-max(1023) {

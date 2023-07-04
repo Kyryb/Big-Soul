@@ -1,38 +1,144 @@
 .changes {
-
   &__swiper {
     &-slide-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
-    }
+      transition: all .3s ease-in-out;
 
-    &-img-container {
-      align-self: center;
+      @include rwd-max(1023) {
+        display: flex;
+        padding: 0 $container-mg-480;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+
+      @include rwd-max(479) {
+        padding: 0 $container-mg-375;
+      }
+
+      @include rwd-max(374) {
+        padding: 0 $container-mg-320;
+      }
     }
 
     &-img {
+      height: getHalfGridHeight(32px);
       object-fit: cover;
       object-position: center;
-      aspect-ratio: 1.14;
       width: 100%;
+      transition: height .3s ease-in-out;
+
+      @include rwd-max(1023) {
+        max-height: 680px;
+        height: calc((100vw - $container-mg-480 * 2) * (681px / 782px));
+      }
+
+      @include rwd-max(479) {
+        height: calc((100vw - $container-mg-375 * 2) * (350px / 328px));
+      }
+
+      @include rwd-max(374) {
+        height: calc((100vw - $container-mg-320 * 2) * (350px / 328px));
+      }
     }
 
     &-slide-text {
       display: flex;
       flex-direction: column;
       gap: 32px;
+      max-height: 85%;
+      overflow: hidden;
       padding-right: $container-mg;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(1439) {
+        padding-right: $container-mg-1024;
+        max-height: 80%;
+      }
+
+      @include rwd-max(1279) {
+        gap: 16px;
+        max-height: 84%;
+      }
+
+      @include rwd-max(1023) {
+        padding: 0;
+        max-height: 100%;
+      }
+
+      @include rwd-max(767) {
+        gap: 24px;
+      }
     }
 
     &-slide-title {
       @extend %heading-1-font-styles;
-      color: $default-black;
+      color: $black-green;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 52px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 48px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 38px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 56px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 32px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 26px;
+      }
     }
 
     &-slide-about {
       @extend %body-3-font-styles;
       color: $gray-main;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1599) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1439) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(1279) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 14px;
+      }
     }
 
     &-nav-wrapper {
@@ -43,6 +149,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
+
+      @include rwd-max(1023) {
+        display: block;
+        position: static;
+      }
     }
 
     &-nav {
@@ -51,16 +162,44 @@
       display: flex;
       gap: 32px;
       padding-right: $container-mg;
-      transition: all 0.2 ease-in-out;
+      transition: padding .3s ease-in-out;
+
+      @include rwd-max(1023) {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        padding: 0 $container-mg-480;
+      }
+
+      @include rwd-max(479) {
+        padding: 0 $container-mg-375;
+      }
+
+      @include rwd-max(374) {
+        padding: 0 $container-mg-320;
+      }
 
       &-buttons {
         display: flex;
         justify-content: space-between;
         gap: 32px;
+        transition: gap .3s ease-in-out;
+
+        @include rwd-max(1279) {
+          gap: 24px;
+        }
+
+        @include rwd-max(1023) {
+          justify-content: center;
+        }
       }
 
       &--hidden {
         opacity: 0;
+
+        @include rwd-max(1023) {
+          opacity: unset;
+        }
       }
 
       .swiper-pagination {

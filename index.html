@@ -8,9 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="page">
-  <header class="header" hidden>
+  <header class="header">
     <a href="#" class="logo">
       <img
         src="../assets/images/logo/Big-Soul-Header.svg"
@@ -21,23 +22,85 @@
     <nav class="nav">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="nav__link">Ретрит</a>
+          <a href="#retreat-about" class="nav__link">Ретрит</a>
         </li>
         <li class="nav__item">
-          <a href="" class="nav__link">Відновлення з TAYANNA</a>
+          <a href="#coaches" class="nav__link">Відновлення з TAYANNA</a>
         </li>
         <li class="nav__item">
-          <a href="" class="nav__link">Програма ретриту</a>
+          <a href="#retreat-plan" class="nav__link">Програма ретриту</a>
         </li>
         <li class="nav__item">
-          <a href="" class="nav__link">Відгуки</a>
+          <a href="#reviews" class="nav__link">Відгуки</a>
         </li>
         <li class="nav__item">
-          <a href="" class="nav__link">FAQ</a>
-        </li>
+          <a href="#faq" class="nav__link">FAQ</a>
+        </li> 
       </ul>
     </nav>
-    <a href="" class="btn btn--primary">Забронювати місце</a>
+    <a href="#contact-1" class="btn btn--primary btn--header">Забронювати місце</a>
+    <input 
+      id="menuToggle" 
+      type="checkbox"
+      class="header__menu-toggle"
+    />
+    <div class="burger">
+      <span class="burger__line burger__line--1"></span>
+      <span class="burger__line burger__line--2"></span>
+      <span class="burger__line burger__line--3"></span>
+    </div>
+    <div class="menu" id="menu">
+      <nav class="nav nav--menu">
+        <ul class="nav__items nav__items--menu">
+          <li class="nav__item nav__item--menu">
+            <a href="#retreat-about" 
+              class="nav__link nav__link--menu menu__link">
+              Ретрит
+            </a>
+          </li>
+          <li class="nav__item nav__item--menu">
+            <a href="#coaches" class="nav__link nav__link--menu menu__link">
+              Відновлення з TAYANNA
+            </a>
+          </li>
+          <li class="nav__item nav__item--menu">
+            <a href="#retreat-plan" class="nav__link nav__link--menu menu__link">
+              Програма ретриту
+            </a>
+          </li>
+          <li class="nav__item nav__item--menu">
+            <a href="#reviews" class="nav__link nav__link--menu menu__link">
+              Відгуки
+            </a>
+          </li>
+          <li class="nav__item nav__item--menu">
+            <a href="#faq" class="nav__link nav__link--menu menu__link">
+              FAQ
+            </a>
+          </li> 
+        </ul>
+      </nav>
+      <a href="#contact-1" class="btn btn--primary menu__link">
+        Забронювати місце
+      </a>
+      <div class="menu__contact-info">
+        <a
+          href="mailto:alma.lawson@example.com"
+          class="menu__link menu__contact-link">
+          alma.lawson@example.com
+        </a>
+        <a
+          href="#"
+          class="menu__link menu__contact-link">
+          8502 Preston Rd. Inglewood, Maine 98380
+        </a>
+        <a
+          href="Tel:808-555-0111"
+          class="menu__link menu__contact-link">
+          WhatsApp: (808) 555-0111
+        </a>
+      </div>
+    </div>
   </header>
   <section class="hero section page__section">
     <div class="container">
@@ -59,7 +122,9 @@
           <p class="hero__about">
             Have you ever thought about what makes some brands stand out? It’s their definite sense of identity that connects perfectly with their target audience.
           </p>
-          <a href="#" class="btn btn--secondary">Переглянути програму</a>
+          <a href="#retreat-plan" class="btn btn--secondary">
+            Переглянути програму
+          </a>
         </div>
       </div>
     </div>
@@ -68,27 +133,47 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide hero__swiper-slide">
             <picture class="hero__swiper-img-container">
-              <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
+              <img 
+                src="./assets/images/hero-slider/img-1.jpg" 
+                alt="" 
+                class="hero__swiper-img"
+              >
             </picture>
           </div>
           <div class="swiper-slide hero__swiper-slide">
             <picture class="hero__swiper-img-container">
-              <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
+              <img 
+                src="./assets/images/hero-slider/img-1.jpg"
+                alt="" 
+                class="hero__swiper-img"
+              >
             </picture>
           </div>
           <div class="swiper-slide hero__swiper-slide">
             <picture class="hero__swiper-img-container">
-              <img src="./assets/images/test.jpeg" alt="" class="hero__swiper-img">
+              <img 
+              src="./assets/images/hero-slider/img-1.jpg"
+              alt="" 
+              class="hero__swiper-img"
+            >
             </picture>
           </div>
           <div class="swiper-slide hero__swiper-slide">
             <picture class="hero__swiper-img-container">
-              <img src="./assets/images/test2.jpg" alt="" class="hero__swiper-img">
+              <img 
+              src="./assets/images/hero-slider/img-1.jpg"
+              alt="" 
+              class="hero__swiper-img"
+            >
             </picture>
           </div>
           <div class="swiper-slide hero__swiper-slide">
             <picture class="hero__swiper-img-container">
-              <img src="./assets/images/hero-slider/img-1.jpg" alt="" class="hero__swiper-img">
+              <img 
+                src="./assets/images/hero-slider/img-1.jpg" 
+                alt="" 
+                class="hero__swiper-img"
+              >
             </picture>
           </div>
         </div>
@@ -96,7 +181,18 @@
       </div>
     </div>
   </section>
-  <section class="retreat-about page__section section">
+
+  <section class="video section page__section" data-aos="fade-up">
+    <picture class="video__preview-container">
+      <img 
+        src="./assets/images/preview.jpg" 
+        alt="preview" 
+        class="video__preview"
+      >
+    </picture>
+    <span class="video__play"></span>
+  </section>
+  <section class="retreat-about page__section section" id="retreat-about" data-aos="fade-down">
     <div class="container">
       <div class="section__title-container">
         <span class="section__title">
@@ -121,7 +217,7 @@
     </div>
   </section>
 
-  <section class="gallery page__section section section--green">
+  <section class="gallery page__section section section--green" id="#gallery" data-aos="fade-up">
     <div class="container">
       <h2 class="gallery__title">
         Відчуй гармонію разом зі співачкою TAYANNA на віллі в Іспанії
@@ -171,7 +267,7 @@
     </div>
   </section>
 
-  <section class="target page__section section">
+  <section class="target page__section section" id="retreat-target" data-aos="fade-down">
     <div class="target__wrapper">
       <span class="section__title target__section-title">
         Для кого цей ретрит?
@@ -197,12 +293,16 @@
         </ul>
       </article>
       <picture class="target__img-container">
-        <img src="./assets/images/target.jpg" alt="" class="target__img">
+        <img 
+          src="./assets/images/target.jpg" 
+          alt="" 
+          class="target__img"
+        >
       </picture>
     </div>
   </section>
 
-  <section class="changes page__section section">
+  <section class="changes page__section section" id="changes" data-aos="fade-up">
     <div class="container">
       <div class="section__title-container">
         <span class="section__title changes__title">
@@ -216,7 +316,7 @@
           <div class="changes__swiper-slide-content">
             <picture class="changes__swiper-img-container">
               <img
-                src="./assets/images/test.jpeg"
+                src="./assets/images/changes-swiper/changes-1.jpg"
                 alt=""
                 class="changes__swiper-img"
               >
@@ -235,7 +335,7 @@
           <div class="changes__swiper-slide-content">
             <picture class="changes__swiper-img-container">
               <img
-                src="./assets/images/test2.jpg"
+                src="./assets/images/changes-swiper/changes-1.jpg"
                 alt=""
                 class="changes__swiper-img"
               >
@@ -254,7 +354,7 @@
           <div class="changes__swiper-slide-content">
             <picture class="changes__swiper-img-container">
               <img
-                src="./assets/images/test.jpeg"
+                src="./assets/images/changes-swiper/changes-1.jpg"
                 alt=""
                 class="changes__swiper-img"
               >
@@ -273,7 +373,7 @@
           <div class="changes__swiper-slide-content">
             <picture class="changes__swiper-img-container">
               <img
-                src="./assets/images/test.jpeg"
+                src="./assets/images/changes-swiper/changes-1.jpg"
                 alt=""
                 class="changes__swiper-img"
               >
@@ -294,14 +394,14 @@
           <div class="swiper-pagination"></div>
           <div class="changes__swiper-nav-buttons">
             <div class="custom-nav-button custom-nav-button--prev"></div>
-            <div class="custom-nav-button custom-nav-button--next" id="test">
+            <div class="custom-nav-button custom-nav-button--next">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="services page__section section">
+  <section class="services page__section section" id="services"           data-aos="fade-down">
     <div class="container">
       <div class="section__title-container">
         <span class="section__title">
@@ -316,7 +416,7 @@
           <span class="services__card-blur"></span>
           <picture class="services__card-img-container">
             <img 
-              src="./assets/images/test.jpeg" 
+              src="./assets/images/services/card-1.jpg" 
               alt="" 
               class="services__card-img"
             >
@@ -388,7 +488,7 @@
     </div>
   </section>
 
-  <section class="coaches page__section section section--green">
+  <section class="coaches page__section section section--green" id="coaches" data-aos="fade-up">
     <div class="container">
       <div class="section__title-container">
         <span class="section__title">
@@ -487,7 +587,7 @@
     </div>
   </section>
 
-  <section class="contact-us section page__section">
+  <section class="contact-us section page__section" id="contact-1" data-aos="fade-down">
     <div class="container">
       <picture class="contact-us__background-container">
         <img 
@@ -535,7 +635,7 @@
     </div>
   </section>
 
-  <section class="retreat-plan section page__section">
+  <section class="retreat-plan section page__section" id="retreat-plan" data-aos="fade-up">
     <div class="container">
       <div class="section__title-container">
         <span class="section__title">Програма ретриту</span>
@@ -549,7 +649,7 @@
         <div class="retreat-plan__cards-controls swiper-wrapper">
           <div class="swiper-slide">
             <span class="retreat-plan__card-selector retreat-plan__card-selector--active">
-              День другий l Увага собі.
+              День перший l Увага собі.
             </span>
           </div>
           <div class="swiper-slide">
@@ -559,37 +659,38 @@
           </div>
           <div class="swiper-slide">
             <span class="retreat-plan__card-selector">
-              День другий l Увага собі.
+              День третій l Увага собі.
             </span>
           </div>
           <div class="swiper-slide">
             <span class="retreat-plan__card-selector">
-              День другий l Увага собі.
+              День четвертий l Увага собі.
             </span>
           </div>
           <div class="swiper-slide">
             <span class="retreat-plan__card-selector">
-              День другий l Увага собі.
+              День п'ятий l Увага собі.
             </span>
           </div>
           <div class="swiper-slide">
             <span class="retreat-plan__card-selector">
-              День другий l Увага собі.
+              День шостий l Увага собі.
             </span>
           </div>
           <div class="swiper-slide">
             <span class="retreat-plan__card-selector">
-              День другий l Увага собі.
+              День сьомий l Увага собі.
             </span>
           </div>
+        </div>
       </div>
-      </div>
-
       <div class="retreat-plan__cards">
         <div class="retreat-plan__card retreat-plan__card--active">
           <div class="retreat-plan__card-content">
             <div class="retreat-plan__card-info">
-              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <h3 class="retreat-plan__card-title">
+                День перший I Увага собі
+              </h3>
               <p class="retreat-plan__card-about">
                 Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
               </p>
@@ -616,7 +717,9 @@
         <div class="retreat-plan__card">
           <div class="retreat-plan__card-content">
             <div class="retreat-plan__card-info">
-              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <h3 class="retreat-plan__card-title">
+                День другий I Увага собі
+              </h3>
               <p class="retreat-plan__card-about">
                 Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
               </p>
@@ -643,7 +746,38 @@
         <div class="retreat-plan__card">
           <div class="retreat-plan__card-content">
             <div class="retreat-plan__card-info">
-              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <h3 class="retreat-plan__card-title">
+                День третій I Увага собі
+              </h3>
+              <p class="retreat-plan__card-about">
+                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
+              </p>
+              <ul class="retreat-plan__card-items">
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+                <li class="retreat-plan__card-item">
+                  Якщо ти розумієш, що вже час відпочити;
+                </li>
+              </ul>
+            </div>
+            <picture class="retreat-plan__card-img-container">
+              <img 
+                src="./assets/images/retreat-plan/card-3.jpg" 
+                alt="" 
+                class="retreat-plan__card-img">
+            </picture>
+          </div>
+        </div>
+        <div class="retreat-plan__card">
+          <div class="retreat-plan__card-content">
+            <div class="retreat-plan__card-info">
+              <h3 class="retreat-plan__card-title">
+                День четвертий I Увага собі
+              </h3>
               <p class="retreat-plan__card-about">
                 Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
               </p>
@@ -670,7 +804,9 @@
         <div class="retreat-plan__card">
           <div class="retreat-plan__card-content">
             <div class="retreat-plan__card-info">
-              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <h3 class="retreat-plan__card-title">
+                День п'ятий I Увага собі
+              </h3>
               <p class="retreat-plan__card-about">
                 Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
               </p>
@@ -697,7 +833,9 @@
         <div class="retreat-plan__card">
           <div class="retreat-plan__card-content">
             <div class="retreat-plan__card-info">
-              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <h3 class="retreat-plan__card-title">
+                День шостий I Увага собі
+              </h3>
               <p class="retreat-plan__card-about">
                 Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
               </p>
@@ -715,7 +853,7 @@
             </div>
             <picture class="retreat-plan__card-img-container">
               <img 
-                src="./assets/images/retreat-plan/card-6.jpg" 
+                src="./assets/images/retreat-plan/card-5.jpg" 
                 alt="" 
                 class="retreat-plan__card-img">
             </picture>
@@ -724,7 +862,9 @@
         <div class="retreat-plan__card">
           <div class="retreat-plan__card-content">
             <div class="retreat-plan__card-info">
-              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
+              <h3 class="retreat-plan__card-title">
+                День сьомий I Увага собі
+              </h3>
               <p class="retreat-plan__card-about">
                 Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
               </p>
@@ -742,34 +882,7 @@
             </div>
             <picture class="retreat-plan__card-img-container">
               <img 
-                src="./assets/images/test.jpeg" 
-                alt="" 
-                class="retreat-plan__card-img">
-            </picture>
-          </div>
-        </div>
-        <div class="retreat-plan__card">
-          <div class="retreat-plan__card-content">
-            <div class="retreat-plan__card-info">
-              <h3 class="retreat-plan__card-title">День перший I Увага собі</h3>
-              <p class="retreat-plan__card-about">
-                Ретрит - це особливий час і простір для відпочинку, відновлення та особистого розвитку. Це відокремлений від повсякденного життя період, коли ви можете віддалитися від стресу, зануритися у гармонію природи та зосередитися на своєму фізичному та емоційному благополуччі.
-              </p>
-              <ul class="retreat-plan__card-items">
-                <li class="retreat-plan__card-item">
-                  Якщо ти розумієш, що вже час відпочити;
-                </li>
-                <li class="retreat-plan__card-item">
-                  Якщо ти розумієш, що вже час відпочити;
-                </li>
-                <li class="retreat-plan__card-item">
-                  Якщо ти розумієш, що вже час відпочити;
-                </li>
-              </ul>
-            </div>
-            <picture class="retreat-plan__card-img-container">
-              <img 
-                src="./assets/images/test2.jpg" 
+                src="./assets/images/retreat-plan/card-1.jpg" 
                 alt="" 
                 class="retreat-plan__card-img">
             </picture>
@@ -780,7 +893,7 @@
     </div>
   </section>
 
-  <section class="reviews section page__section">
+  <section class="reviews section page__section" id="reviews" data-aos="fade-down">
     <div class="container">
       <div class="section__title-container">
         <span class="section__title">
@@ -791,7 +904,6 @@
         Нам довіряють
       </h2>
     </div>
-
     <div class="reviews__swiper-wrapper">
       <div class="swiper reviews__swiper">
         <div class="swiper-wrapper">
@@ -817,7 +929,8 @@
               <img
                 src="./assets/images/reviews/2.jpg"
                 alt=""
-                class="reviews__swiper-img">
+                class="reviews__swiper-img"
+              >
             </picture>
           </div>
           <div class="swiper-slide">
@@ -829,7 +942,8 @@
               <img
                 src="./assets/images/reviews/3.jpg"
                 alt=""
-                class="reviews__swiper-img">
+                class="reviews__swiper-img"
+              >
             </picture>
           </div>
           <div class="swiper-slide">
@@ -841,7 +955,8 @@
               <img
                 src="./assets/images/reviews/3.jpg"
                 alt=""
-                class="reviews__swiper-img">
+                class="reviews__swiper-img"
+              >
             </picture>
           </div>
           <div class="swiper-slide">
@@ -853,7 +968,8 @@
               <img
                 src="./assets/images/test.jpeg"
                 alt=""
-                class="reviews__swiper-img">
+                class="reviews__swiper-img"
+              >
             </picture>
           </div>
           <div class="swiper-slide">
@@ -865,7 +981,8 @@
               <img
                 src="./assets/images/test.jpeg"
                 alt=""
-                class="reviews__swiper-img">
+                class="reviews__swiper-img"
+              >
             </picture>
           </div>
           <div class="swiper-slide">
@@ -877,7 +994,8 @@
               <img
                 src="./assets/images/reviews/1.jpg"
                 alt=""
-                class="reviews__swiper-img">
+                class="reviews__swiper-img"
+              >
             </picture>
           </div>
         </div>
@@ -889,7 +1007,72 @@
     </div>
   </section>
 
-  <section class="contact-us section page__section">
+  <section class="faq section section--green page__section" id="faq" data-aos="fade-up">
+    <div class="container">
+      <div class="section__title-container">
+        <span class="section__title">FAQ</span>
+      </div>
+
+        <div class="faq__content">
+          <div class="faq__info">
+            <h2 class="faq__title">
+              Маєш питання?
+            </h2>
+            <a href="#contact-2" class="btn btn--secondary faq__btn">
+              Задати питання
+            </a>
+          </div>
+          <div class="faq__accordion">
+            <div class="faq__accordion-tab">
+              <button class="faq__accordion-tab-control">
+                <h3 class="faq__accordion-tab-heading">
+                  Як я буду комунікувати з TAYANNA?
+                </h3>
+                <span class="faq__accordion-tab-arrow"></span>
+              </button>
+              <p class="faq__accordion-tab-content">
+                The duration of your visit to Native State can vary based on your personal preference and schedule. We offer flexible membership options, including daily passes, weekly memberships, and monthly subscriptions. You can choose the option that best suits your needs and enjoy the facilities and services at Native State accordingly.
+              </p>
+            </div>
+            <div class="faq__accordion-tab">
+              <button class="faq__accordion-tab-control">
+                <h3 class="faq__accordion-tab-heading">
+                  Як я буду комунікувати з TAYANNA?
+                </h3>
+                <span class="faq__accordion-tab-arrow"></span>
+              </button>
+              <p class="faq__accordion-tab-content">
+                The duration of your visit to Native State can vary based on your personal preference and schedule. We offer flexible membership options, including daily passes, weekly memberships, and monthly subscriptions. You can choose the option that best suits your needs and enjoy the facilities and services at Native State accordingly.
+              </p>
+            </div>
+            <div class="faq__accordion-tab">
+              <button class="faq__accordion-tab-control">
+                <h3 class="faq__accordion-tab-heading">
+                  Як я буду комунікувати з TAYANNA?
+                </h3>
+                <span class="faq__accordion-tab-arrow"></span>
+              </button>
+              <p class="faq__accordion-tab-content">
+                The duration of your visit to Native State can vary based on your personal preference and schedule. We offer flexible membership options, including daily passes, weekly memberships, and monthly subscriptions. You can choose the option that best suits your needs and enjoy the facilities and services at Native State accordingly.
+              </p>
+            </div>
+            <div class="faq__accordion-tab">
+              <button class="faq__accordion-tab-control">
+                <h3 class="faq__accordion-tab-heading">
+                  Як я буду комунікувати з TAYANNA?
+                </h3>
+                <span class="faq__accordion-tab-arrow"></span>
+              </button>
+              <p class="faq__accordion-tab-content">
+                The duration of your visit to Native State can vary based on your personal preference and schedule. We offer flexible membership options, including daily passes, weekly memberships, and monthly subscriptions. You can choose the option that best suits your needs and enjoy the facilities and services at Native State accordingly.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="contact-us section page__section" id="contact-2" data-aos="fade-down">
     <div class="container">
       <picture class="contact-us__background-container">
         <img 
@@ -935,7 +1118,7 @@
     </div>
   </section>
   
-  <footer class="footer">
+  <footer class="footer" id="footer" data-aos="fade-up">
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__content">

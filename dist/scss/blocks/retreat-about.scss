@@ -3,10 +3,9 @@
     @extend %heading-1-font-styles;
     color: $black-green;
     margin-bottom: 56px;
-    transition: all 0.3s ease-out;
+    transition: font-size 0.3s ease-in-out;
 
     @include rwd-max(1599) {
-      transition: all 0.3s ease-in;
       font-size: 52px;
     }
 
@@ -38,10 +37,9 @@
   &__content {
     display: flex;
     gap: 32px;
-    transition: all 0.3s ease-out;
+    transition: flex-direction 0.3s ease-in-out;
 
     @include rwd-max(1023) {
-      transition: all 0.3s ease-in;
       flex-direction: column;
     }
   }
@@ -50,10 +48,9 @@
     @extend %body-5-font-styles;
     flex: 1 50%;
     color: $gray-main;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
 
     @include rwd-max(1439) {
-      transition: all 0.3s ease-in;
       font-size: 16px;
     }
 
@@ -83,7 +80,7 @@
     object-position: center;
     object-fit: cover;
     width: 100%;
-    transition: all 0.3s ease-out;
+    transition: height 0.3s ease-in-out;
 
     @include rwd-max(1439) {
       @include getGridImgHeight(32px, 2, $container-mg-1024, 454px, 688px);

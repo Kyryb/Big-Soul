@@ -1,4 +1,12 @@
 .logo {
   display: inline-block;
   line-height: 0;
+
+  &__img {
+    transition: height 0.3s ease-in-out;
+
+    @include rwd-max(479) {
+      height: 32px;
+    }
+  }
 }

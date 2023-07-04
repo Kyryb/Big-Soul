@@ -5,12 +5,11 @@
   border-radius: 50%;
   border: 1px solid $black-green;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in-out;
 
   @include rwd-max(1279) {
     height: 64px;
     width: 64px;
-    transition: all 0.3s ease-in;
   }
 
   &--next {

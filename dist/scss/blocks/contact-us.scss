@@ -2,10 +2,8 @@
   position: relative;
   z-index: 1;
   padding-top: 94px;
-  transition: padding 0.3s ease-out;
 
   @include rwd-max(1023) {
-    transition: padding 0.3s ease-in;
     padding-top: 80px;
   }
 
@@ -23,10 +21,9 @@
     height: 584px;
     object-fit: cover;
     object-position: center;
-    transition: all 0.3s ease-out;
+    transition: all .3s ease-in-out;
 
     @include rwd-max(1023) {
-      transition: all 0.3s ease-in;
       height: 314px;
     }
   }
@@ -37,10 +34,9 @@
     text-align: center;
     margin-bottom: 62px;
 
-    transition: all 0.3s ease-out;
+    transition: font-size .3s ease-in-out;
 
     @include rwd-max(1279) {
-      transition: all 0.3s ease-in;
       font-size: 72px;
     }
 
@@ -58,8 +54,7 @@
     padding: 80px;
     background-color: $white-main;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.07);
-
-    transition: all 0.3s ease-out;
+    transition: padding .3s ease-in-out;
 
     @include rwd-max(1439) {
       padding: 64px;
@@ -74,10 +69,9 @@
       color: $default-black;
       text-align: center;
       margin-bottom: 32px;
-      transition: all 0.3s ease-out;
+      transition: font-size .3s ease-in-out;
 
       @include rwd-max(1599) {
-        transition: all 0.3s ease-in;
         font-size: 52px;
       }
 
@@ -103,10 +97,9 @@
       color: $gray-main;
       text-align: center;
       margin-bottom: 48px;
-      transition: all 0.3s ease-out;
+      transition: font-size 0.3s ease-in-out;
 
       @include rwd-max(1279) {
-        transition: all 0.3s ease-in;
         font-size: 16px;
       }
 
@@ -128,10 +121,8 @@
       align-items: flex-end;
       justify-content: center;
       gap: 48px;
-      transition: all 0.3s ease-out;
 
       @include rwd-max(1023) {
-        transition: all 0.3s ease-in;
         flex-direction: column;
         align-items: center;
       }
@@ -142,21 +133,19 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
-      transition: width 0.3s ease-out;
+      transition: width .3s ease-in-out;
 
       @include rwd-max(767) {
         width: 100%;
-        transition: width 0.3s ease-in;
       }
     }
 
     &-label {
       @extend %body-3-font-styles;
       color: $black-secondary;
-      transition: all 0.3s ease-out;
+      transition: font-size .3s ease-in-out;
 
       @include rwd-max(1439) {
-        transition: all 0.3s ease-in;
         font-size: 20px;
       }
 
@@ -179,10 +168,9 @@
       border: none;
       border-bottom: 1px solid $gray-form;
       padding: 0 0 8px 0;
-      transition: all 0.3s ease-out;
+      transition: font-size .3s ease-in-out;
 
       @include rwd-max(1439) {
-        transition: all 0.3s ease-in;
         font-size: 20px;
       }
 
@@ -193,10 +181,9 @@
       &::placeholder {
         @extend %body-3-font-styles;
         color: $gray-secondary;
-        transition: all 0.3s ease-out;
+        transition: font-size 0.3s ease-in-out;
 
         @include rwd-max(1439) {
-          transition: all 0.3s ease-in;
           font-size: 20px;
         }
 

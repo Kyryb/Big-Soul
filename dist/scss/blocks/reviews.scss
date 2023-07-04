@@ -4,11 +4,10 @@
     @extend %heading-1-font-styles;
     color: $black-green;
     margin-bottom: 48px;
-    transition: all 0.3s ease-out;
+    transition: font-size 0.3s ease-in-out;
 
     @include rwd-max(1599) {
       font-size: 52px;
-      transition: all 0.3s ease-in;
     }
 
     @include rwd-max(1439) {
@@ -39,11 +38,10 @@
 
   &__swiper {
     padding: 0 $container-mg !important; 
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
 
       @include rwd-max(1439) {
         padding: 0 $container-mg-1024 !important;
-        transition: all 0.3s ease-in;
       }
 
       @include rwd-max(1023) {
@@ -74,11 +72,10 @@
       @include getGridImgHeight(32px, 3, $container-mg, 473, 448);
       width: 100%;
       object-fit: cover;
-      transition: all 0.3s ease-out;
+      transition: height .3s ease-in-out;
 
       @include rwd-max(1439) {
         @include getGridImgHeight(32px, 3, $container-mg-1024, 473, 448);
-        transition: all 0.3s ease-in;
       }
 
       @include rwd-max(1279) {
@@ -112,11 +109,10 @@
       position: absolute;
       top: calc(0px - 48px - 88px);
       right: $container-mg;
-      transition: all 0.3s ease-out;
+      transition: gap .3s ease-in-out;
 
       @include rwd-max(1439) {
         right: $container-mg-1024;
-        transition: all 0.3s ease-in;
       }
 
       @include rwd-max(1279) {

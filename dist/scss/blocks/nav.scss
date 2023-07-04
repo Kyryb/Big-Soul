@@ -1,16 +1,68 @@
 .nav {
+  @include rwd-max(1023) {
+    display: none;
+  }
+
+  &--menu {
+    display: none;
+
+    @include rwd-max(1023) {
+      display: block;
+    }
+  }
+
   &__items {
     display: flex;
     gap: 16px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      gap: 8px;
+    }
+
+    &--menu {
+      flex-direction: column;
+      gap: 32px;
+
+      @include rwd-max(767) {
+        gap: 8px;
+      }
+    }
   }
 
   &__item {
     padding: 12px 16px;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      padding: 12px 8px;
+    }
+
+    &--menu {
+      padding: 12px 16px;
+    }
   }
 
   &__link {
     color: $default-black;
     font: 18px/27px $ff-main;
     text-decoration: none;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1279) {
+      font-size: 14px;
+    }
+
+    &--menu {
+      font-size: 24px;
+
+      @include rwd-max(767) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 18px;
+      }
+    }
   }
 }

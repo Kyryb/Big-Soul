@@ -1,0 +1,230 @@
+.faq {
+  padding: 80px 0;
+  transition: all .3s ease-in-out;
+
+  @include rwd-max(767) {
+    padding: 64px 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    transition: all .3s ease-in-out;
+
+    @include rwd-max(1023) {
+      flex-direction: column;
+      gap: 64px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    @extend %heading-1-font-styles;
+    color: $black-green;
+    transition: font-size .3s ease-in-out;
+
+    @include rwd-max(1599) {
+      font-size: 52px;
+    }
+
+    @include rwd-max(1439) {
+      font-size: 48px;
+    }
+
+    @include rwd-max(1279) {
+      font-size: 38px;
+    }
+
+    @include rwd-max(1023) {
+      font-size: 56px;
+    }
+
+    @include rwd-max(767) {
+      font-size: 34px;
+    }
+
+    @include rwd-max(479) {
+      font-size: 28px;
+    }
+
+    @include rwd-max(374) {
+      font-size: 26px;
+    }
+  }
+
+  .faq__btn {
+    transition: width .3s ease-in-out;
+
+    @include rwd-max(767) {
+      width: 100%;
+    }
+  }
+
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 688px;
+    transition: all .3s ease-in-out;
+
+
+    @include rwd-max(1279) {
+      width: 540px;
+    }
+
+    @include rwd-max(1023) {
+      width: 100%;
+    }
+    
+    &-tab {
+      padding: 24px 40px;
+      transition: all 0.3s ease-in-out;
+
+      @include rwd-max(767) {
+        padding: 24px;
+      }
+
+      @include rwd-max(479) {
+        padding: 24px 20px;
+      }
+
+      @include rwd-max(374) {
+        padding: 24px 16px;
+      }
+
+      &--active {
+        padding: 32px 40px;
+        background-color: $white-main;
+
+        @include rwd-max(767) {
+          padding: 24px;
+        }
+
+        @include rwd-max(479) {
+          padding: 24px 20px;
+        }
+
+        @include rwd-max(374) {
+          padding: 24px 16px;
+        }
+
+        .faq__accordion-tab {
+          &-content {
+            padding-top: 24px;
+            visibility: visible;
+          }
+
+          &-arrow {
+            transform: rotate(180deg);
+            border-color: $primary-green;
+          }
+        }
+      }
+    }
+
+    &-tab-heading {
+      font: 28px/130% $ff-headings;
+      color: $gray-main;
+      transition: font-size .3s ease-in-out;
+
+      @include rwd-max(1279) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 28px;
+      }
+
+      @include rwd-max(767) {
+        text-align: left;
+        font-size: 20px;
+        max-width: 248px;
+      }
+
+      @include rwd-max(479) {
+        max-width: 224px;
+      }
+
+      @include rwd-max(374) {
+        font-size: 18px;
+        max-width: 200px;
+      }
+    }
+
+    &-tab-content {
+      @extend %body-5-font-styles;
+      box-sizing: content-box;
+      color: #4B4C4F;
+      visibility: hidden;
+      max-height: 0;
+      overflow: hidden;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(1279) {
+        font-size: 16px;
+      }
+
+      @include rwd-max(1023) {
+        font-size: 20px;
+      }
+
+      @include rwd-max(767) {
+        font-size: 18px;
+      }
+
+      @include rwd-max(479) {
+        font-size: 20px;
+      }
+    }
+
+    &-tab-arrow {
+      display: block;
+      background: url(../../../assets/images/icons/arrow-16.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 64px;
+      height: 64px;
+      border: 1px solid #f1e7da;
+      border-radius: 50%;
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(767) {
+        width: 48px;
+        height: 48px;
+      }
+
+      @include rwd-max(374) {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    &-tab-control {
+      padding: 0;
+      width: 100%;
+      display: flex;
+      gap: 32px;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      align-items: center;
+      cursor: pointer;
+      justify-content: space-between;
+
+      transition: all .3s ease-in-out;
+
+      @include rwd-max(767) {
+        gap: 24px;
+      }
+
+      @include rwd-max(479) {
+        gap: 16px;
+      }
+    }
+  }
+}

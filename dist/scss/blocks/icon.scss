@@ -33,10 +33,9 @@
     background-image: url(../../../assets/images/icons/coach-ig.svg);
     height: 28px;
     width: 28px;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
 
     @include rwd-max(1279) {
-      transition: all 0.3s ease-in;
       background-image: url(../../../assets/images/icons/coach-ig-24.svg);
       height: 24px;
       width: 24px;
